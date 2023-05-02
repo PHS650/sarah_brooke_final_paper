@@ -1,0 +1,227 @@
+---
+title: "Homework 3"
+author: "Brooke Sasia"
+format: html
+editor: visual
+---
+
+## Background
+
+In this homework, I will be creating three new variables from the Spotify data. TLDR: see @tbl-1
+
+## Loading packages
+
+```{r, message = F}
+library(tidyverse)
+library(psych)
+library(GPArotation)
+library(psy)
+library(plotrix)
+library(FactoMineR)
+```
+
+## Loading spotify data
+
+```{r, message = F}
+d <- tidytuesdayR::tt_load('2020-01-21')$spotify_songs
+
+names(d)
+```
+
+## New variables using Spotify data
+
+When thinking about creating three new variables from this Spotify data, I'm curious to know whether there are any latent factors within them. I'm going to run an exploratory factor analysis (EFA) to find out, and then create factor scores based on the latent dimensions that I find.
+
+### Correlation matrix
+
+Before running the EFA, first I'll look at a correlation matrix to see whether any of the variables have reasonable correlations.
+
+```{r}
+cor_matrix <- d %>% 
+  select(danceability, energy, key, loudness, mode, speechiness, acousticness, instrumentalness, liveness, valence, tempo, duration_ms) %>% 
+  cor(use = "pairwise.complete.obs")
+
+cor_matrix %>% 
+  round(2) %>% 
+  knitr::kable()
+```
+
+Looking at the correlation matrix, it seems that loudness and energy are highly positively correlated (r = .68), valence and danceability are positively correlated (r = .33), acousticness and energy are negatively correlated (r = -.54), and acousticness and loudness are negatively correlated (r = -.36). There are a few other smaller correlations, but these are the main ones. I wonder if there could be two factors that relate to how upbeat or chill a song is.
+
+In terms of outliers, it looks like duration in ms, mode, and key aren't really correlated with much, but mode and key are correlated with each other. I think I'm going to eliminate duration in ms because I'm not sure that relates a ton to the other variables. I'll keep mode and key! (Also I'm aware this is pretty arbitrary but I'm just going with it haha)
+
+```{r}
+# removing the outlier (duration_ms) from the correlation matrix
+cor_matrix2 <- d %>% 
+  select(danceability, energy, key, loudness, mode, speechiness, acousticness, instrumentalness, liveness, valence, tempo) %>% 
+  cor(use = "pairwise.complete.obs")
+```
+
+### Extracting factors
+
+I'm going to use factor analysis to analyze covariance (rather than unique variance or error variance). I suspect there could be three factors, with one related songs that are upbeat, another with chill song characteristics, and a third with mode and key together (I'm not really a music person but maybe those have to do with the logistics/creation of a song).
+
+To determine how many factors to extract, I'm going to keep factors with an
+
+```{r}
+eigen(cor_matrix2)$values
+```
+
+Interestingly, there are four factors with an eigenvalue greater than 1. Let's look at a Scree plot as well.
+
+```{r}
+VSS.scree(cor_matrix2)
+```
+
+Hmmm, it almost looks like there could be a couple elbows here. I guess one elbow could be the third factor, but the more obvious elbow is the fourth factor. Maybe I will try a solution with two factors and also four factors to see how well it fits.
+
+### Factor rotation
+
+#### Four factor solution
+
+I think it's fine for the factors to be correlated, so I'll use an oblique rotation and retain 4 factors. Based on the eigenvalues alone (and kind of the Scree plot), this seems to be the best fit.
+
+```{r}
+# running the factor analysis
+fa4 <- fa(r = cor_matrix2,      # Correlation matrix input
+          nfactors = 4,         # Number of factors retained
+          rotate = "oblimin",   # Type of rotation used, "oblimin" for "oblique"
+          covar = FALSE,        # Type of input matrix (we're inputting a correlation matrix)
+          fm = "pa",            # principal axis factoring
+          max.iter = 1000)      # increasing the maximum number of iterations than the default     
+```
+
+#### Two factor solution
+
+Based on the Scree plot, I think I'd also like to see what a two factor solution looks like. Again, I think it's fine for the factors to be correlated, so I'll use an oblique rotation and retain 2 factors.
+
+```{r}
+# running the factor analysis
+fa2 <- fa(r = cor_matrix2,      # Correlation matrix input
+          nfactors = 2,         # Number of factors retained
+          rotate = "oblimin",   # Type of rotation used, "oblimin" for "oblique"
+          covar = FALSE,        # Type of input matrix (we're inputting a correlation matrix)
+          fm = "pa",            # principal axis factoring
+          max.iter = 500)       # increasing the maximum number of iterations than the default        
+```
+
+#### Three factor solution
+
+Okay well now I'm going down a rabbit hole because I need 3 variables to complete this homework assignment so I'm hoping that a two factor solution is not the best one. I'm going to run 3 factors just in case cuz what the heck.
+
+```{r}
+# running the factor analysis
+fa3 <- fa(r = cor_matrix2,      # Correlation matrix input
+          nfactors = 3,         # Number of factors retained
+          rotate = "oblimin",   # Type of rotation used, "oblimin" for "oblique"
+          covar = FALSE,        # Type of input matrix (we're inputting a correlation matrix)
+          fm = "pa",            # principal axis factoring
+          max.iter = 500)       # increasing the maximum number of iterations than the default        
+```
+
+### Interpreting findings
+
+Now that I've run 2, 3, and 4 factor solutions, I'm going to look at and interpret the results to see what is best. Typically we consider a strong enough link to be \>0.30. I'll also look at whether there's any variables that load onto multiple factors or neither factors (the first of which being more problematic). Finally, we'll look at interpretability and whether the factor extraction makes sense.
+
+Also, h\^2 values represent the proportion of the variance in a variable that is predictable from the factors underlying it. If communality values equal or exceed 1, there is a problem (too little data, wrong number of factors extracted). A very low communality value for a variable indicates that this variable is an "outlier variable," because it can't be predicted from the factors extracted.
+
+#### Two factor solution
+
+```{r}
+# 2 factor solution
+print(fa2, sort = T)
+fa.diagram(fa2)
+```
+
+Here we can see that energy has a very high h\^2 value that exceeds 1! This could be because it's very likely that energy in and of itself is a factor, and many of the other variables could constitute energy. Also, mode and key have extremely low h\^2 values, so maybe I could consider excluding them. Finally, there are a few variables that don't really load well onto either factor.
+
+#### Three factor solution
+
+```{r}
+# 3 factor solution
+print(fa3, sort = T)
+fa.diagram(fa3)
+```
+
+Here, energy still has a very high h\^2 value and the only variables that really load onto the third factor are mode and key, which was predicted from the correlation matrix. Compared to the 2 factor solution, the three factor seems to be a better fit. On factor one is energy, loudness, and acousticness. Liveness and tempo kind of load onto both factors. For factor two, there is danceability, valence, speechiness, and instrumentalness. So far I think this solution is better than the two factor solution!
+
+#### Four factor solution
+
+```{r}
+# 4 factor solution
+print(fa4, sort = T)
+fa.diagram(fa4)
+```
+
+Looking at the four factor solution, the h\^2 value is still high for energy, but now also very high for instrumentalness (1.56) and danceability (2.42). I don't think these factors are as interpretable. Also I think I shouldn't put a ton more effort into finding the best solution at this point!!
+
+### Conclusion
+
+I've decided based on interpretibility and factor loadings, I'm going to go with the three factor solution. This also works best with the assingment :) Also, I forgot to note this, but it looks like 30% of the variance is being explained by 3 factors.
+
+### Factor scores
+
+Next I'm going to create factor scores from the 3 factor model, which are estimates of the scores participants (songs in this case) would have received on each of the factors had the factors been measured directly. Factor scores weigh individual variables differently from one sample to the next and depend in part on the "other" variables that were included in the factor analysis.
+
+```{r}
+# creating factor scores for the 3 factor model
+f_scores <- d %>% 
+  select(danceability, energy, key, loudness, mode, speechiness, acousticness, instrumentalness, liveness, valence, tempo) %>% 
+  factor.scores(fa3, method = "Thurstone") # Thurstone method involves weighting
+
+# cbind binds a column onto the end of it
+d <- cbind(d, f_scores$scores) # just keeping the scores themselves
+
+
+
+# checking work
+names(d)
+```
+
+We've got PA1, PA2, and PA3 stuck on the end which are the factor scores!
+
+### Description of factors
+
+The three factors have the following variables:
+
+**Factor One:** 1) energy, 2) loudness 3) acousticness, 4) liveness.
+
+**Factor Two:** 1) danceability, 2) valence, 3) speechiness, 4) tempo, 5) instrumentalness,
+
+**Factor Three:** 1) mode, 2) key.
+
+From this, I'm going to give the factors different names that are more descriptive than PA1-PA3. Factor One seems to describe the intensity of a song and a measurable amount of property, so I'll rename Factor One to *pa1_intensity* (pa = principal axis and 1 = originally factor 1). Factor Two seems to describe level of involvement, which may be a little bit of a stretch, but involvement meaning the extent to which singers, instruments, and movement (i.e., dancing) contribute to a song. I'll rename Factor Two to *pa2_involvement*. Finally, Factor Three is pretty basic and describe very technical aspects of songs, so I'll rename Factor Three to *pa3_technicality*.
+
+```{r}
+# renaming factors
+d <- d %>% 
+  rename("pa1_intensity" = "PA1",     # new column name = old column name
+         "pa2_involvement" = "PA2", 
+         "pa3_technicality" = "PA3") 
+
+# checking work
+names(d)
+```
+
+Here are some descriptive statistics for each of the three new factor score variables. The three factors are intensity, involvement, and technicality.
+
+```{r, echo = FALSE}
+#| label: tbl-1
+#| tbl-cap: Descriptive Statistics for Spotify Data Factor Scores
+d %>% 
+  select(pa1_intensity, pa2_involvement, pa3_technicality) %>% 
+  psych::describe() %>% 
+  round(2) %>% 
+  knitr::kable()
+```
+
+## Saving data file with new variables
+
+```{r}
+# creating a dataset that has a merge variable (track id) and my 3 new vars
+new_vars <- d %>% 
+  select(track_id, pa1_intensity, pa2_involvement, pa3_technicality)
+
+# exporting the dataset
+write.csv(new_vars, "Homework3_variables.csv")
+```

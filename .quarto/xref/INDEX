@@ -1,0 +1,21 @@
+{
+  "Chapter1.qmd": {
+    "Chapter1.html": "dc8606ca"
+  },
+  "references.qmd": {
+    "references.html": "f25ff1dc"
+  },
+  "scoring/scoring.qmd": {
+    "scoring.html": "972bc05a"
+  },
+  "index.qmd": {
+    "index.html": "9717318c",
+    "index.tex": "8bf8cc3f"
+  },
+  "Chapter2.qmd": {
+    "Chapter2.html": "65042274"
+  },
+  "Chapter3.qmd": {
+    "Chapter3.html": "5d26d26e"
+  }
+}

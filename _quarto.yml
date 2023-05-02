@@ -1,0 +1,25 @@
+project:
+  type: book
+  output-dir: docs
+
+book:
+  title: "Week 4 Homework: CodebookRepository_BrookeSarah"
+  author: "Brooke Sasia & Sarah Salas"
+  date: "4/19/2023"
+  chapters:
+    - index.qmd
+    - Chapter1.qmd
+    - Chapter2.qmd
+    - Chapter3.qmd
+    - references.qmd
+
+bibliography: references.bib
+
+format:
+  html:
+    theme: cosmo
+  pdf:
+    documentclass: scrreprt
+
+editor: visual
+

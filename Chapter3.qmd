@@ -1,0 +1,60 @@
+# Chapter 3
+
+Provide some descriptive information on data cleaning re: inclusion/exclusion criteria
+
+## Brooke
+
+## Background
+
+### Loading packages
+
+```{r, message = F}
+library(tidyverse)
+library(psych)
+library(GPArotation)
+library(psy)
+library(plotrix)
+library(FactoMineR)
+```
+
+### Loading spotify data
+
+```{r, message = F}
+d <- tidytuesdayR::tt_load('2020-01-21')$spotify_songs
+
+names(d)
+```
+
+### New variables using Spotify data
+
+When thinking about creating three new variables from this Spotify data, I'm curious to know whether there are any latent factors within them. I'm going to run an exploratory factor analysis (EFA) to find out, and then create factor scores based on the latent dimensions that I find.
+
+#### Correlation matrix
+
+Before running the EFA, first I'll look at a correlation matrix to see whether any of the variables have reasonable correlations.
+
+```{r}
+cor_matrix <- d %>% 
+  select(danceability, energy, key, loudness, mode, speechiness, acousticness, instrumentalness, liveness, valence, tempo, duration_ms) %>% 
+  cor(use = "pairwise.complete.obs")
+
+cor_matrix %>% 
+  round(2) %>% 
+  knitr::kable()
+```
+
+Looking at the correlation matrix, it seems that loudness and energy are highly positively correlated (r = .68), valence and danceability are positively correlated (r = .33), acousticness and energy are negatively correlated (r = -.54), and acousticness and loudness are negatively correlated (r = -.36). There are a few other smaller correlations, but these are the main ones. I wonder if there could be two factors that relate to how upbeat or chill a song is.
+
+In terms of outliers, it looks like duration in ms, mode, and key aren't really correlated with much, but mode and key are correlated with each other. I think I'm going to eliminate duration in ms because I'm not sure that relates a ton to the other variables. I'll keep mode and key! (Also I'm aware this is pretty arbitrary but I'm just going with it haha)
+
+```{r}
+# removing the outlier (duration_ms) from the correlation matrix
+cor_matrix2 <- d %>% 
+  select(danceability, energy, key, loudness, mode, speechiness, acousticness, instrumentalness, liveness, valence, tempo) %>% 
+  cor(use = "pairwise.complete.obs")
+```
+
+
+## Sarah
+
+I created three new variables in this data. Table 1 shows the new variables created from the existing Spotify data which includes song length (in minutes), whether the track is a song, and whether the track is both live and acoustic.

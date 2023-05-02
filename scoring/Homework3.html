@@ -1,0 +1,977 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.335">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Brooke Sasia">
+
+<title>Homework 3</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<script src="Homework3_files/libs/clipboard/clipboard.min.js"></script>
+<script src="Homework3_files/libs/quarto-html/quarto.js"></script>
+<script src="Homework3_files/libs/quarto-html/popper.min.js"></script>
+<script src="Homework3_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="Homework3_files/libs/quarto-html/anchor.min.js"></script>
+<link href="Homework3_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="Homework3_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="Homework3_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="Homework3_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="Homework3_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+
+
+</head>
+
+<body class="fullcontent">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Homework 3</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Brooke Sasia </p>
+          </div>
+  </div>
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<section id="background" class="level2">
+<h2 class="anchored" data-anchor-id="background">Background</h2>
+<p>In this homework, I will be creating three new variables from the Spotify data. TLDR: see <a href="#tbl-1">Table&nbsp;1</a></p>
+</section>
+<section id="loading-packages" class="level2">
+<h2 class="anchored" data-anchor-id="loading-packages">Loading packages</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(psych)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(GPArotation)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(psy)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(plotrix)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(FactoMineR)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="loading-spotify-data" class="level2">
+<h2 class="anchored" data-anchor-id="loading-spotify-data">Loading spotify data</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>d <span class="ot">&lt;-</span> tidytuesdayR<span class="sc">::</span><span class="fu">tt_load</span>(<span class="st">'2020-01-21'</span>)<span class="sc">$</span>spotify_songs</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Downloading file 1 of 1: `spotify_songs.csv`</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(d)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] "track_id"                 "track_name"              
+ [3] "track_artist"             "track_popularity"        
+ [5] "track_album_id"           "track_album_name"        
+ [7] "track_album_release_date" "playlist_name"           
+ [9] "playlist_id"              "playlist_genre"          
+[11] "playlist_subgenre"        "danceability"            
+[13] "energy"                   "key"                     
+[15] "loudness"                 "mode"                    
+[17] "speechiness"              "acousticness"            
+[19] "instrumentalness"         "liveness"                
+[21] "valence"                  "tempo"                   
+[23] "duration_ms"             </code></pre>
+</div>
+</div>
+</section>
+<section id="new-variables-using-spotify-data" class="level2">
+<h2 class="anchored" data-anchor-id="new-variables-using-spotify-data">New variables using Spotify data</h2>
+<p>When thinking about creating three new variables from this Spotify data, I’m curious to know whether there are any latent factors within them. I’m going to run an exploratory factor analysis (EFA) to find out, and then create factor scores based on the latent dimensions that I find.</p>
+<section id="correlation-matrix" class="level3">
+<h3 class="anchored" data-anchor-id="correlation-matrix">Correlation matrix</h3>
+<p>Before running the EFA, first I’ll look at a correlation matrix to see whether any of the variables have reasonable correlations.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>cor_matrix <span class="ot">&lt;-</span> d <span class="sc">%&gt;%</span> </span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(danceability, energy, key, loudness, mode, speechiness, acousticness, instrumentalness, liveness, valence, tempo, duration_ms) <span class="sc">%&gt;%</span> </span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cor</span>(<span class="at">use =</span> <span class="st">"pairwise.complete.obs"</span>)</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>cor_matrix <span class="sc">%&gt;%</span> </span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">round</span>(<span class="dv">2</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>  knitr<span class="sc">::</span><span class="fu">kable</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<table class="table table-sm table-striped">
+<colgroup>
+<col style="width: 12%">
+<col style="width: 9%">
+<col style="width: 5%">
+<col style="width: 4%">
+<col style="width: 6%">
+<col style="width: 4%">
+<col style="width: 8%">
+<col style="width: 9%">
+<col style="width: 12%">
+<col style="width: 6%">
+<col style="width: 5%">
+<col style="width: 4%">
+<col style="width: 8%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"></th>
+<th style="text-align: right;">danceability</th>
+<th style="text-align: right;">energy</th>
+<th style="text-align: right;">key</th>
+<th style="text-align: right;">loudness</th>
+<th style="text-align: right;">mode</th>
+<th style="text-align: right;">speechiness</th>
+<th style="text-align: right;">acousticness</th>
+<th style="text-align: right;">instrumentalness</th>
+<th style="text-align: right;">liveness</th>
+<th style="text-align: right;">valence</th>
+<th style="text-align: right;">tempo</th>
+<th style="text-align: right;">duration_ms</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">danceability</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">-0.09</td>
+<td style="text-align: right;">0.01</td>
+<td style="text-align: right;">0.03</td>
+<td style="text-align: right;">-0.06</td>
+<td style="text-align: right;">0.18</td>
+<td style="text-align: right;">-0.02</td>
+<td style="text-align: right;">-0.01</td>
+<td style="text-align: right;">-0.12</td>
+<td style="text-align: right;">0.33</td>
+<td style="text-align: right;">-0.18</td>
+<td style="text-align: right;">-0.10</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">energy</td>
+<td style="text-align: right;">-0.09</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">0.01</td>
+<td style="text-align: right;">0.68</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">-0.03</td>
+<td style="text-align: right;">-0.54</td>
+<td style="text-align: right;">0.03</td>
+<td style="text-align: right;">0.16</td>
+<td style="text-align: right;">0.15</td>
+<td style="text-align: right;">0.15</td>
+<td style="text-align: right;">0.01</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">key</td>
+<td style="text-align: right;">0.01</td>
+<td style="text-align: right;">0.01</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">-0.17</td>
+<td style="text-align: right;">0.02</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">0.01</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">0.02</td>
+<td style="text-align: right;">-0.01</td>
+<td style="text-align: right;">0.02</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">loudness</td>
+<td style="text-align: right;">0.03</td>
+<td style="text-align: right;">0.68</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">-0.02</td>
+<td style="text-align: right;">0.01</td>
+<td style="text-align: right;">-0.36</td>
+<td style="text-align: right;">-0.15</td>
+<td style="text-align: right;">0.08</td>
+<td style="text-align: right;">0.05</td>
+<td style="text-align: right;">0.09</td>
+<td style="text-align: right;">-0.12</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">mode</td>
+<td style="text-align: right;">-0.06</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">-0.17</td>
+<td style="text-align: right;">-0.02</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">-0.06</td>
+<td style="text-align: right;">0.01</td>
+<td style="text-align: right;">-0.01</td>
+<td style="text-align: right;">-0.01</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">0.01</td>
+<td style="text-align: right;">0.02</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">speechiness</td>
+<td style="text-align: right;">0.18</td>
+<td style="text-align: right;">-0.03</td>
+<td style="text-align: right;">0.02</td>
+<td style="text-align: right;">0.01</td>
+<td style="text-align: right;">-0.06</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">0.03</td>
+<td style="text-align: right;">-0.10</td>
+<td style="text-align: right;">0.06</td>
+<td style="text-align: right;">0.06</td>
+<td style="text-align: right;">0.04</td>
+<td style="text-align: right;">-0.09</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">acousticness</td>
+<td style="text-align: right;">-0.02</td>
+<td style="text-align: right;">-0.54</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">-0.36</td>
+<td style="text-align: right;">0.01</td>
+<td style="text-align: right;">0.03</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">-0.01</td>
+<td style="text-align: right;">-0.08</td>
+<td style="text-align: right;">-0.02</td>
+<td style="text-align: right;">-0.11</td>
+<td style="text-align: right;">-0.08</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">instrumentalness</td>
+<td style="text-align: right;">-0.01</td>
+<td style="text-align: right;">0.03</td>
+<td style="text-align: right;">0.01</td>
+<td style="text-align: right;">-0.15</td>
+<td style="text-align: right;">-0.01</td>
+<td style="text-align: right;">-0.10</td>
+<td style="text-align: right;">-0.01</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">-0.01</td>
+<td style="text-align: right;">-0.18</td>
+<td style="text-align: right;">0.02</td>
+<td style="text-align: right;">0.06</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">liveness</td>
+<td style="text-align: right;">-0.12</td>
+<td style="text-align: right;">0.16</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">0.08</td>
+<td style="text-align: right;">-0.01</td>
+<td style="text-align: right;">0.06</td>
+<td style="text-align: right;">-0.08</td>
+<td style="text-align: right;">-0.01</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">-0.02</td>
+<td style="text-align: right;">0.02</td>
+<td style="text-align: right;">0.01</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">valence</td>
+<td style="text-align: right;">0.33</td>
+<td style="text-align: right;">0.15</td>
+<td style="text-align: right;">0.02</td>
+<td style="text-align: right;">0.05</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">0.06</td>
+<td style="text-align: right;">-0.02</td>
+<td style="text-align: right;">-0.18</td>
+<td style="text-align: right;">-0.02</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">-0.03</td>
+<td style="text-align: right;">-0.03</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">tempo</td>
+<td style="text-align: right;">-0.18</td>
+<td style="text-align: right;">0.15</td>
+<td style="text-align: right;">-0.01</td>
+<td style="text-align: right;">0.09</td>
+<td style="text-align: right;">0.01</td>
+<td style="text-align: right;">0.04</td>
+<td style="text-align: right;">-0.11</td>
+<td style="text-align: right;">0.02</td>
+<td style="text-align: right;">0.02</td>
+<td style="text-align: right;">-0.03</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">0.00</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">duration_ms</td>
+<td style="text-align: right;">-0.10</td>
+<td style="text-align: right;">0.01</td>
+<td style="text-align: right;">0.02</td>
+<td style="text-align: right;">-0.12</td>
+<td style="text-align: right;">0.02</td>
+<td style="text-align: right;">-0.09</td>
+<td style="text-align: right;">-0.08</td>
+<td style="text-align: right;">0.06</td>
+<td style="text-align: right;">0.01</td>
+<td style="text-align: right;">-0.03</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">1.00</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>Looking at the correlation matrix, it seems that loudness and energy are highly positively correlated (r = .68), valence and danceability are positively correlated (r = .33), acousticness and energy are negatively correlated (r = -.54), and acousticness and loudness are negatively correlated (r = -.36). There are a few other smaller correlations, but these are the main ones. I wonder if there could be two factors that relate to how upbeat or chill a song is.</p>
+<p>In terms of outliers, it looks like duration in ms, mode, and key aren’t really correlated with much, but mode and key are correlated with each other. I think I’m going to eliminate duration in ms because I’m not sure that relates a ton to the other variables. I’ll keep mode and key! (Also I’m aware this is pretty arbitrary but I’m just going with it haha)</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># removing the outlier (duration_ms) from the correlation matrix</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>cor_matrix2 <span class="ot">&lt;-</span> d <span class="sc">%&gt;%</span> </span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(danceability, energy, key, loudness, mode, speechiness, acousticness, instrumentalness, liveness, valence, tempo) <span class="sc">%&gt;%</span> </span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cor</span>(<span class="at">use =</span> <span class="st">"pairwise.complete.obs"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="extracting-factors" class="level3">
+<h3 class="anchored" data-anchor-id="extracting-factors">Extracting factors</h3>
+<p>I’m going to use factor analysis to analyze covariance (rather than unique variance or error variance). I suspect there could be three factors, with one related songs that are upbeat, another with chill song characteristics, and a third with mode and key together (I’m not really a music person but maybe those have to do with the logistics/creation of a song).</p>
+<p>To determine how many factors to extract, I’m going to keep factors with an</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">eigen</span>(cor_matrix2)<span class="sc">$</span>values</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] 2.1522908 1.5192814 1.1795078 1.0892864 0.9786859 0.9729357 0.8700836
+ [8] 0.8068100 0.6375606 0.5688131 0.2247446</code></pre>
+</div>
+</div>
+<p>Interestingly, there are four factors with an eigenvalue greater than 1. Let’s look at a Scree plot as well.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">VSS.scree</span>(cor_matrix2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="Homework3_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>Hmmm, it almost looks like there could be a couple elbows here. I guess one elbow could be the third factor, but the more obvious elbow is the fourth factor. Maybe I will try a solution with two factors and also four factors to see how well it fits.</p>
+</section>
+<section id="factor-rotation" class="level3">
+<h3 class="anchored" data-anchor-id="factor-rotation">Factor rotation</h3>
+<section id="four-factor-solution" class="level4">
+<h4 class="anchored" data-anchor-id="four-factor-solution">Four factor solution</h4>
+<p>I think it’s fine for the factors to be correlated, so I’ll use an oblique rotation and retain 4 factors. Based on the eigenvalues alone (and kind of the Scree plot), this seems to be the best fit.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># running the factor analysis</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>fa4 <span class="ot">&lt;-</span> <span class="fu">fa</span>(<span class="at">r =</span> cor_matrix2,      <span class="co"># Correlation matrix input</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>          <span class="at">nfactors =</span> <span class="dv">4</span>,         <span class="co"># Number of factors retained</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>          <span class="at">rotate =</span> <span class="st">"oblimin"</span>,   <span class="co"># Type of rotation used, "oblimin" for "oblique"</span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>          <span class="at">covar =</span> <span class="cn">FALSE</span>,        <span class="co"># Type of input matrix (we're inputting a correlation matrix)</span></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>          <span class="at">fm =</span> <span class="st">"pa"</span>,            <span class="co"># principal axis factoring</span></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>          <span class="at">max.iter =</span> <span class="dv">1000</span>)      <span class="co"># increasing the maximum number of iterations than the default     </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in fa.stats(r = r, f = f, phi = phi, n.obs = n.obs, np.obs = np.obs, :
+The estimated weights for the factor scores are probably incorrect.  Try a
+different factor score estimation method.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in fac(r = r, nfactors = nfactors, n.obs = n.obs, rotate = rotate, : An
+ultra-Heywood case was detected.  Examine the results carefully</code></pre>
+</div>
+</div>
+</section>
+<section id="two-factor-solution" class="level4">
+<h4 class="anchored" data-anchor-id="two-factor-solution">Two factor solution</h4>
+<p>Based on the Scree plot, I think I’d also like to see what a two factor solution looks like. Again, I think it’s fine for the factors to be correlated, so I’ll use an oblique rotation and retain 2 factors.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># running the factor analysis</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>fa2 <span class="ot">&lt;-</span> <span class="fu">fa</span>(<span class="at">r =</span> cor_matrix2,      <span class="co"># Correlation matrix input</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>          <span class="at">nfactors =</span> <span class="dv">2</span>,         <span class="co"># Number of factors retained</span></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>          <span class="at">rotate =</span> <span class="st">"oblimin"</span>,   <span class="co"># Type of rotation used, "oblimin" for "oblique"</span></span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>          <span class="at">covar =</span> <span class="cn">FALSE</span>,        <span class="co"># Type of input matrix (we're inputting a correlation matrix)</span></span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>          <span class="at">fm =</span> <span class="st">"pa"</span>,            <span class="co"># principal axis factoring</span></span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>          <span class="at">max.iter =</span> <span class="dv">500</span>)       <span class="co"># increasing the maximum number of iterations than the default        </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in fa.stats(r = r, f = f, phi = phi, n.obs = n.obs, np.obs = np.obs, :
+The estimated weights for the factor scores are probably incorrect.  Try a
+different factor score estimation method.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in fac(r = r, nfactors = nfactors, n.obs = n.obs, rotate = rotate, : An
+ultra-Heywood case was detected.  Examine the results carefully</code></pre>
+</div>
+</div>
+</section>
+<section id="three-factor-solution" class="level4">
+<h4 class="anchored" data-anchor-id="three-factor-solution">Three factor solution</h4>
+<p>Okay well now I’m going down a rabbit hole because I need 3 variables to complete this homework assignment so I’m hoping that a two factor solution is not the best one. I’m going to run 3 factors just in case cuz what the heck.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># running the factor analysis</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>fa3 <span class="ot">&lt;-</span> <span class="fu">fa</span>(<span class="at">r =</span> cor_matrix2,      <span class="co"># Correlation matrix input</span></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>          <span class="at">nfactors =</span> <span class="dv">3</span>,         <span class="co"># Number of factors retained</span></span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>          <span class="at">rotate =</span> <span class="st">"oblimin"</span>,   <span class="co"># Type of rotation used, "oblimin" for "oblique"</span></span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>          <span class="at">covar =</span> <span class="cn">FALSE</span>,        <span class="co"># Type of input matrix (we're inputting a correlation matrix)</span></span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>          <span class="at">fm =</span> <span class="st">"pa"</span>,            <span class="co"># principal axis factoring</span></span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>          <span class="at">max.iter =</span> <span class="dv">500</span>)       <span class="co"># increasing the maximum number of iterations than the default        </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in fa.stats(r = r, f = f, phi = phi, n.obs = n.obs, np.obs = np.obs, :
+The estimated weights for the factor scores are probably incorrect.  Try a
+different factor score estimation method.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in fac(r = r, nfactors = nfactors, n.obs = n.obs, rotate = rotate, : An
+ultra-Heywood case was detected.  Examine the results carefully</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="interpreting-findings" class="level3">
+<h3 class="anchored" data-anchor-id="interpreting-findings">Interpreting findings</h3>
+<p>Now that I’ve run 2, 3, and 4 factor solutions, I’m going to look at and interpret the results to see what is best. Typically we consider a strong enough link to be &gt;0.30. I’ll also look at whether there’s any variables that load onto multiple factors or neither factors (the first of which being more problematic). Finally, we’ll look at interpretability and whether the factor extraction makes sense.</p>
+<p>Also, h^2 values represent the proportion of the variance in a variable that is predictable from the factors underlying it. If communality values equal or exceed 1, there is a problem (too little data, wrong number of factors extracted). A very low communality value for a variable indicates that this variable is an “outlier variable,” because it can’t be predicted from the factors extracted.</p>
+<section id="two-factor-solution-1" class="level4">
+<h4 class="anchored" data-anchor-id="two-factor-solution-1">Two factor solution</h4>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 2 factor solution</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(fa2, <span class="at">sort =</span> T)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Factor Analysis using method =  pa
+Call: fa(r = cor_matrix2, nfactors = 2, rotate = "oblimin", covar = FALSE, 
+    max.iter = 500, fm = "pa")
+Standardized loadings (pattern matrix) based upon correlation matrix
+                 item   PA1   PA2     h2     u2 com
+energy              2  1.02 -0.02 1.0430 -0.043 1.0
+loudness            4  0.67  0.07 0.4475  0.552 1.0
+acousticness        7 -0.53 -0.02 0.2817  0.718 1.0
+liveness            9  0.14 -0.11 0.0327  0.967 1.9
+danceability        1 -0.01  0.85 0.7293  0.271 1.0
+valence            10  0.13  0.40 0.1687  0.831 1.2
+speechiness         6  0.00  0.20 0.0383  0.962 1.0
+tempo              11  0.15 -0.17 0.0540  0.946 2.0
+instrumentalness    8 -0.05 -0.11 0.0148  0.985 1.3
+mode                5 -0.01 -0.07 0.0052  0.995 1.1
+key                 3  0.01  0.04 0.0014  0.999 1.1
+
+                       PA1  PA2
+SS loadings           1.83 0.99
+Proportion Var        0.17 0.09
+Cumulative Var        0.17 0.26
+Proportion Explained  0.65 0.35
+Cumulative Proportion 0.65 1.00
+
+ With factor correlations of 
+      PA1   PA2
+PA1  1.00 -0.05
+PA2 -0.05  1.00
+
+Mean item complexity =  1.2
+Test of the hypothesis that 2 factors are sufficient.
+
+df null model =  55  with the objective function =  1.47
+df of  the model are 34  and the objective function was  0.23 
+
+The root mean square of the residuals (RMSR) is  0.04 
+The df corrected root mean square of the residuals is  0.06 
+
+Fit based upon off diagonal values = 0.92</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">fa.diagram</span>(fa2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="Homework3_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>Here we can see that energy has a very high h^2 value that exceeds 1! This could be because it’s very likely that energy in and of itself is a factor, and many of the other variables could constitute energy. Also, mode and key have extremely low h^2 values, so maybe I could consider excluding them. Finally, there are a few variables that don’t really load well onto either factor.</p>
+</section>
+<section id="three-factor-solution-1" class="level4">
+<h4 class="anchored" data-anchor-id="three-factor-solution-1">Three factor solution</h4>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 3 factor solution</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(fa3, <span class="at">sort =</span> T)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Factor Analysis using method =  pa
+Call: fa(r = cor_matrix2, nfactors = 3, rotate = "oblimin", covar = FALSE, 
+    max.iter = 500, fm = "pa")
+Standardized loadings (pattern matrix) based upon correlation matrix
+                 item   PA1   PA2   PA3    h2     u2 com
+energy              2  1.02 -0.02  0.00 1.043 -0.043 1.0
+loudness            4  0.67  0.07 -0.01 0.447  0.553 1.0
+acousticness        7 -0.53 -0.02  0.00 0.282  0.718 1.0
+liveness            9  0.14 -0.11 -0.03 0.034  0.966 2.0
+danceability        1 -0.01  0.86  0.00 0.737  0.263 1.0
+valence            10  0.13  0.40  0.04 0.172  0.828 1.2
+speechiness         6  0.00  0.18 -0.08 0.043  0.957 1.4
+tempo              11  0.15 -0.17  0.00 0.054  0.946 2.0
+instrumentalness    8 -0.05 -0.12 -0.02 0.015  0.985 1.4
+mode                5  0.00  0.00  0.65 0.419  0.581 1.0
+key                 3  0.00  0.00 -0.27 0.071  0.929 1.0
+
+                       PA1  PA2  PA3
+SS loadings           1.83 0.99 0.50
+Proportion Var        0.17 0.09 0.05
+Cumulative Var        0.17 0.26 0.30
+Proportion Explained  0.55 0.30 0.15
+Cumulative Proportion 0.55 0.85 1.00
+
+ With factor correlations of 
+      PA1   PA2   PA3
+PA1  1.00 -0.05 -0.01
+PA2 -0.05  1.00 -0.10
+PA3 -0.01 -0.10  1.00
+
+Mean item complexity =  1.3
+Test of the hypothesis that 3 factors are sufficient.
+
+df null model =  55  with the objective function =  1.47
+df of  the model are 25  and the objective function was  0.19 
+
+The root mean square of the residuals (RMSR) is  0.04 
+The df corrected root mean square of the residuals is  0.06 
+
+Fit based upon off diagonal values = 0.94</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">fa.diagram</span>(fa3)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="Homework3_files/figure-html/unnamed-chunk-11-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>Here, energy still has a very high h^2 value and the only variables that really load onto the third factor are mode and key, which was predicted from the correlation matrix. Compared to the 2 factor solution, the three factor seems to be a better fit. On factor one is energy, loudness, and acousticness. Liveness and tempo kind of load onto both factors. For factor two, there is danceability, valence, speechiness, and instrumentalness. So far I think this solution is better than the two factor solution!</p>
+</section>
+<section id="four-factor-solution-1" class="level4">
+<h4 class="anchored" data-anchor-id="four-factor-solution-1">Four factor solution</h4>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 4 factor solution</span></span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(fa4, <span class="at">sort =</span> T)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Factor Analysis using method =  pa
+Call: fa(r = cor_matrix2, nfactors = 4, rotate = "oblimin", covar = FALSE, 
+    max.iter = 1000, fm = "pa")
+Standardized loadings (pattern matrix) based upon correlation matrix
+                 item   PA1   PA2   PA3   PA4    h2     u2 com
+danceability        1  1.56  0.00  0.00  0.00 2.423 -1.423 1.0
+valence            10  0.22  0.11 -0.14  0.00 0.077  0.923 2.2
+speechiness         6  0.11 -0.01 -0.09 -0.09 0.029  0.971 2.9
+energy              2 -0.01  1.04  0.03  0.00 1.075 -0.075 1.0
+loudness            4  0.04  0.66 -0.11 -0.02 0.446  0.554 1.1
+acousticness        7 -0.03 -0.53 -0.01  0.00 0.282  0.718 1.0
+tempo              11 -0.11  0.15  0.02  0.01 0.037  0.963 1.9
+liveness            9 -0.07  0.14  0.00 -0.02 0.026  0.974 1.6
+instrumentalness    8  0.00  0.00  1.25  0.00 1.562 -0.562 1.0
+mode                5  0.00  0.00  0.00  0.66 0.438  0.562 1.0
+key                 3 -0.01  0.00  0.00 -0.26 0.069  0.931 1.0
+
+                       PA1  PA2  PA3  PA4
+SS loadings           2.50 1.84 1.60 0.52
+Proportion Var        0.23 0.17 0.15 0.05
+Cumulative Var        0.23 0.39 0.54 0.59
+Proportion Explained  0.39 0.29 0.25 0.08
+Cumulative Proportion 0.39 0.67 0.92 1.00
+
+ With factor correlations of 
+      PA1   PA2   PA3   PA4
+PA1  1.00 -0.04 -0.01 -0.06
+PA2 -0.04  1.00 -0.01 -0.01
+PA3 -0.01 -0.01  1.00  0.00
+PA4 -0.06 -0.01  0.00  1.00
+
+Mean item complexity =  1.4
+Test of the hypothesis that 4 factors are sufficient.
+
+df null model =  55  with the objective function =  1.47
+df of  the model are 17  and the objective function was  0.05 
+
+The root mean square of the residuals (RMSR) is  0.02 
+The df corrected root mean square of the residuals is  0.03 
+
+Fit based upon off diagonal values = 0.99</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">fa.diagram</span>(fa4)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="Homework3_files/figure-html/unnamed-chunk-12-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>Looking at the four factor solution, the h^2 value is still high for energy, but now also very high for instrumentalness (1.56) and danceability (2.42). I don’t think these factors are as interpretable. Also I think I shouldn’t put a ton more effort into finding the best solution at this point!!</p>
+</section>
+</section>
+<section id="conclusion" class="level3">
+<h3 class="anchored" data-anchor-id="conclusion">Conclusion</h3>
+<p>I’ve decided based on interpretibility and factor loadings, I’m going to go with the three factor solution. This also works best with the assingment :) Also, I forgot to note this, but it looks like 30% of the variance is being explained by 3 factors.</p>
+</section>
+<section id="factor-scores" class="level3">
+<h3 class="anchored" data-anchor-id="factor-scores">Factor scores</h3>
+<p>Next I’m going to create factor scores from the 3 factor model, which are estimates of the scores participants (songs in this case) would have received on each of the factors had the factors been measured directly. Factor scores weigh individual variables differently from one sample to the next and depend in part on the “other” variables that were included in the factor analysis.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co"># creating factor scores for the 3 factor model</span></span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>f_scores <span class="ot">&lt;-</span> d <span class="sc">%&gt;%</span> </span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(danceability, energy, key, loudness, mode, speechiness, acousticness, instrumentalness, liveness, valence, tempo) <span class="sc">%&gt;%</span> </span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">factor.scores</span>(fa3, <span class="at">method =</span> <span class="st">"Thurstone"</span>) <span class="co"># Thurstone method involves weighting</span></span>
+<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a><span class="co"># cbind binds a column onto the end of it</span></span>
+<span id="cb29-7"><a href="#cb29-7" aria-hidden="true" tabindex="-1"></a>d <span class="ot">&lt;-</span> <span class="fu">cbind</span>(d, f_scores<span class="sc">$</span>scores) <span class="co"># just keeping the scores themselves</span></span>
+<span id="cb29-8"><a href="#cb29-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-9"><a href="#cb29-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-10"><a href="#cb29-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-11"><a href="#cb29-11" aria-hidden="true" tabindex="-1"></a><span class="co"># checking work</span></span>
+<span id="cb29-12"><a href="#cb29-12" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(d)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] "track_id"                 "track_name"              
+ [3] "track_artist"             "track_popularity"        
+ [5] "track_album_id"           "track_album_name"        
+ [7] "track_album_release_date" "playlist_name"           
+ [9] "playlist_id"              "playlist_genre"          
+[11] "playlist_subgenre"        "danceability"            
+[13] "energy"                   "key"                     
+[15] "loudness"                 "mode"                    
+[17] "speechiness"              "acousticness"            
+[19] "instrumentalness"         "liveness"                
+[21] "valence"                  "tempo"                   
+[23] "duration_ms"              "PA1"                     
+[25] "PA2"                      "PA3"                     </code></pre>
+</div>
+</div>
+<p>We’ve got PA1, PA2, and PA3 stuck on the end which are the factor scores!</p>
+</section>
+<section id="description-of-factors" class="level3">
+<h3 class="anchored" data-anchor-id="description-of-factors">Description of factors</h3>
+<p>The three factors have the following variables:</p>
+<p><strong>Factor One:</strong> 1) energy, 2) loudness 3) acousticness, 4) liveness.</p>
+<p><strong>Factor Two:</strong> 1) danceability, 2) valence, 3) speechiness, 4) tempo, 5) instrumentalness,</p>
+<p><strong>Factor Three:</strong> 1) mode, 2) key.</p>
+<p>From this, I’m going to give the factors different names that are more descriptive than PA1-PA3. Factor One seems to describe the intensity of a song and a measurable amount of property, so I’ll rename Factor One to <em>pa1_intensity</em> (pa = principal axis and 1 = originally factor 1). Factor Two seems to describe level of involvement, which may be a little bit of a stretch, but involvement meaning the extent to which singers, instruments, and movement (i.e., dancing) contribute to a song. I’ll rename Factor Two to <em>pa2_involvement</em>. Finally, Factor Three is pretty basic and describe very technical aspects of songs, so I’ll rename Factor Three to <em>pa3_technicality</em>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="co"># renaming factors</span></span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>d <span class="ot">&lt;-</span> d <span class="sc">%&gt;%</span> </span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="st">"pa1_intensity"</span> <span class="ot">=</span> <span class="st">"PA1"</span>,     <span class="co"># new column name = old column name</span></span>
+<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a>         <span class="st">"pa2_involvement"</span> <span class="ot">=</span> <span class="st">"PA2"</span>, </span>
+<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a>         <span class="st">"pa3_technicality"</span> <span class="ot">=</span> <span class="st">"PA3"</span>) </span>
+<span id="cb31-6"><a href="#cb31-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-7"><a href="#cb31-7" aria-hidden="true" tabindex="-1"></a><span class="co"># checking work</span></span>
+<span id="cb31-8"><a href="#cb31-8" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(d)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] "track_id"                 "track_name"              
+ [3] "track_artist"             "track_popularity"        
+ [5] "track_album_id"           "track_album_name"        
+ [7] "track_album_release_date" "playlist_name"           
+ [9] "playlist_id"              "playlist_genre"          
+[11] "playlist_subgenre"        "danceability"            
+[13] "energy"                   "key"                     
+[15] "loudness"                 "mode"                    
+[17] "speechiness"              "acousticness"            
+[19] "instrumentalness"         "liveness"                
+[21] "valence"                  "tempo"                   
+[23] "duration_ms"              "pa1_intensity"           
+[25] "pa2_involvement"          "pa3_technicality"        </code></pre>
+</div>
+</div>
+<p>Here are some descriptive statistics for each of the three new factor score variables. The three factors are intensity, involvement, and technicality.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="tbl-1" class="anchored">
+<table class="table table-sm table-striped">
+<caption>Table&nbsp;1: Descriptive Statistics for Spotify Data Factor Scores</caption>
+<colgroup>
+<col style="width: 17%">
+<col style="width: 5%">
+<col style="width: 6%">
+<col style="width: 5%">
+<col style="width: 5%">
+<col style="width: 7%">
+<col style="width: 8%">
+<col style="width: 5%">
+<col style="width: 6%">
+<col style="width: 5%">
+<col style="width: 6%">
+<col style="width: 6%">
+<col style="width: 9%">
+<col style="width: 5%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"></th>
+<th style="text-align: right;">vars</th>
+<th style="text-align: right;">n</th>
+<th style="text-align: right;">mean</th>
+<th style="text-align: right;">sd</th>
+<th style="text-align: right;">median</th>
+<th style="text-align: right;">trimmed</th>
+<th style="text-align: right;">mad</th>
+<th style="text-align: right;">min</th>
+<th style="text-align: right;">max</th>
+<th style="text-align: right;">range</th>
+<th style="text-align: right;">skew</th>
+<th style="text-align: right;">kurtosis</th>
+<th style="text-align: right;">se</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">pa1_intensity</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">32833</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1.03</td>
+<td style="text-align: right;">0.13</td>
+<td style="text-align: right;">0.07</td>
+<td style="text-align: right;">1.07</td>
+<td style="text-align: right;">-4.37</td>
+<td style="text-align: right;">2.25</td>
+<td style="text-align: right;">6.62</td>
+<td style="text-align: right;">-0.65</td>
+<td style="text-align: right;">0.07</td>
+<td style="text-align: right;">0.01</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">pa2_involvement</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">32833</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.87</td>
+<td style="text-align: right;">0.09</td>
+<td style="text-align: right;">0.04</td>
+<td style="text-align: right;">0.88</td>
+<td style="text-align: right;">-3.93</td>
+<td style="text-align: right;">2.07</td>
+<td style="text-align: right;">5.99</td>
+<td style="text-align: right;">-0.47</td>
+<td style="text-align: right;">-0.01</td>
+<td style="text-align: right;">0.00</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">pa3_technicality</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">32833</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.67</td>
+<td style="text-align: right;">0.35</td>
+<td style="text-align: right;">0.02</td>
+<td style="text-align: right;">0.64</td>
+<td style="text-align: right;">-1.21</td>
+<td style="text-align: right;">1.06</td>
+<td style="text-align: right;">2.27</td>
+<td style="text-align: right;">-0.24</td>
+<td style="text-align: right;">-1.69</td>
+<td style="text-align: right;">0.00</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</section>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

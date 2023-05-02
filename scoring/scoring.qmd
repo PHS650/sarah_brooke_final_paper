@@ -1,0 +1,22 @@
+---
+title: "Untitled"
+---
+
+```{r}
+library(readxl)
+library(scorekeeper)
+```
+
+Scoresheet steps (1) Selects the variables of interest
+
+(2) 
+
+```{r}
+load('data/spotify_songs.RData')
+spotify_songs$length <- (spotify_songs$duration_ms*.001)/60
+scoresheet <- read_excel("scoring/scoresheet.xlsx")
+scored_data <- scorekeep(spotify_songs, scoresheet)
+spotify_clean <- scored_data[[1]]
+save(spotify_clean, file = 'data/spotify_clean.RData')
+
+```
