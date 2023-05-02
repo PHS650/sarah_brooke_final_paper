@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.335">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Final Paper - 2&nbsp; Data and Methods</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./Results1.html" rel="next">
+<link href="./Intro.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Data and Methods</span></h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Final Paper</a> 
+    </div>
+      </div>
+      <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">Preface</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Intro.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Methods.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Data and Methods</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Results1.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Results1.html</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Results2.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Results2.html</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Discussion.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Discussion.html</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">References</a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#data" id="toc-data" class="nav-link active" data-scroll-target="#data"><span class="toc-section-number">2.1</span>  Data</a></li>
+  <li><a href="#methods" id="toc-methods" class="nav-link" data-scroll-target="#methods"><span class="toc-section-number">2.2</span>  Methods</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title d-none d-lg-block"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Data and Methods</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<section id="data" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="data"><span class="header-section-number">2.1</span> Data</h2>
+<div class="cell">
+
+</div>
+<p>This study uses Spotify data provided by the TidyTuesday package. The dataset contains 28356 tracks with 10693 different artists. A sample of the data is shown in <a href="#tbl-tab1">Table&nbsp;<span>2.1</span></a></p>
+<p>We created a new set of variables for our analysis. They are shown in <a href="#tbl-tab2">Table&nbsp;<span>2.2</span></a> below.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="tbl-tab1" class="anchored">
+<table class="table table-sm table-striped">
+<caption>Table&nbsp;2.1: Sample of data downloaded from TidyTuesday</caption>
+<colgroup>
+<col style="width: 17%">
+<col style="width: 40%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 17%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">track_id</th>
+<th style="text-align: left;">track_name</th>
+<th style="text-align: left;">track_artist</th>
+<th style="text-align: right;">track_popularity</th>
+<th style="text-align: left;">track_album_id</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">6f807x0ima9a1j3VPbc7VN</td>
+<td style="text-align: left;">I Don’t Care (with Justin Bieber) - Loud Luxury Remix</td>
+<td style="text-align: left;">Ed Sheeran</td>
+<td style="text-align: right;">66</td>
+<td style="text-align: left;">2oCs0DGTsRO98Gh5ZSl2Cx</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">0r7CVbZTWZgbTCYdfa2P31</td>
+<td style="text-align: left;">Memories - Dillon Francis Remix</td>
+<td style="text-align: left;">Maroon 5</td>
+<td style="text-align: right;">67</td>
+<td style="text-align: left;">63rPSO264uRjW1X5E6cWv6</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">1z1Hg7Vb0AhHDiEmnDE79l</td>
+<td style="text-align: left;">All the Time - Don Diablo Remix</td>
+<td style="text-align: left;">Zara Larsson</td>
+<td style="text-align: right;">70</td>
+<td style="text-align: left;">1HoSmj2eLcsrR0vE9gThr4</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">75FpbthrwQmzHlBJLuGdC7</td>
+<td style="text-align: left;">Call You Mine - Keanu Silva Remix</td>
+<td style="text-align: left;">The Chainsmokers</td>
+<td style="text-align: right;">60</td>
+<td style="text-align: left;">1nqYsOef1yKKuGOVchbsk6</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">1e8PAfcKUYoKkxPhrHqw4x</td>
+<td style="text-align: left;">Someone You Loved - Future Humans Remix</td>
+<td style="text-align: left;">Lewis Capaldi</td>
+<td style="text-align: right;">69</td>
+<td style="text-align: left;">7m7vv9wlQ4i0LFuJiE2zsQ</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="cell">
+
+</div>
+<p>We created a new set of variables for our analysis. They are shown in <a href="#tbl-tab2">Table&nbsp;<span>2.2</span></a> below.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="tbl-tab2" class="anchored">
+<table class="table table-sm table-striped">
+<caption>Table&nbsp;2.2: Spotify New Variables</caption>
+<colgroup>
+<col style="width: 22%">
+<col style="width: 5%">
+<col style="width: 13%">
+<col style="width: 15%">
+<col style="width: 16%">
+<col style="width: 8%">
+<col style="width: 4%">
+<col style="width: 10%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">track_id</th>
+<th style="text-align: right;">X</th>
+<th style="text-align: right;">pa1_intensity</th>
+<th style="text-align: right;">pa2_involvement</th>
+<th style="text-align: right;">pa3_technicality</th>
+<th style="text-align: right;">length</th>
+<th style="text-align: right;">song</th>
+<th style="text-align: right;">liv_acoust</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">0017A6SJgTbfQVU2EtsPNo</td>
+<td style="text-align: right;">12645</td>
+<td style="text-align: right;">-1.7196419</td>
+<td style="text-align: right;">0.1913509</td>
+<td style="text-align: right;">0.7397046</td>
+<td style="text-align: right;">3.924000</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">002xjHwzEx66OWFV2IP9dk</td>
+<td style="text-align: right;">25676</td>
+<td style="text-align: right;">-0.0755509</td>
+<td style="text-align: right;">-0.3612856</td>
+<td style="text-align: right;">0.6282051</td>
+<td style="text-align: right;">3.288100</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">004s3t0ONYlzxII9PLgU6z</td>
+<td style="text-align: right;">15062</td>
+<td style="text-align: right;">0.9121051</td>
+<td style="text-align: right;">-2.0487493</td>
+<td style="text-align: right;">0.5053585</td>
+<td style="text-align: right;">6.225200</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">008MceT31RotUANsKuzy3L</td>
+<td style="text-align: right;">2888</td>
+<td style="text-align: right;">0.3357485</td>
+<td style="text-align: right;">0.1420924</td>
+<td style="text-align: right;">-0.8679181</td>
+<td style="text-align: right;">3.809417</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">008rk8F6ZxspZT4bUlkIQG</td>
+<td style="text-align: right;">1030</td>
+<td style="text-align: right;">0.9282875</td>
+<td style="text-align: right;">0.0151897</td>
+<td style="text-align: right;">0.7652391</td>
+<td style="text-align: right;">3.938467</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">00bc7A2CLjp40XNd6ZPZNa</td>
+<td style="text-align: right;">412</td>
+<td style="text-align: right;">0.1412908</td>
+<td style="text-align: right;">0.7920615</td>
+<td style="text-align: right;">-0.9418670</td>
+<td style="text-align: right;">3.525783</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">00chLpzhgVjxs1zKC9UScL</td>
+<td style="text-align: right;">24684</td>
+<td style="text-align: right;">-0.2612712</td>
+<td style="text-align: right;">1.1648632</td>
+<td style="text-align: right;">-0.8663965</td>
+<td style="text-align: right;">4.374450</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">00cqd6ZsSkLZqGMlQCR0Zo</td>
+<td style="text-align: right;">25779</td>
+<td style="text-align: right;">-1.9703045</td>
+<td style="text-align: right;">-1.2217106</td>
+<td style="text-align: right;">-0.5642814</td>
+<td style="text-align: right;">4.051117</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">00cWy7HXgoJlXWR718s70W</td>
+<td style="text-align: right;">27439</td>
+<td style="text-align: right;">0.0705819</td>
+<td style="text-align: right;">0.9180228</td>
+<td style="text-align: right;">0.4760189</td>
+<td style="text-align: right;">3.936000</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">00e5UrNnUkBSKOPRUew6bG</td>
+<td style="text-align: right;">7117</td>
+<td style="text-align: right;">-0.5180877</td>
+<td style="text-align: right;">0.1889350</td>
+<td style="text-align: right;">0.4686174</td>
+<td style="text-align: right;">4.534450</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</section>
+<section id="methods" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="methods"><span class="header-section-number">2.2</span> Methods</h2>
+<p>[Brooke]</p>
+<p>The second portion of our analysis comprises nested logistic regressions. The first model estimates the likelihood that a track is a song with track length as the predictor. The second model estimates the likelihood that a track is both live and acoustic with the same main predictor. Models 3 and 4 mirror models 1 and 2 but include the covariates tempo, loundess, and genre. Results are presented in odds ratios.</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./Intro.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./Results1.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Results1.html</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+</body></html>
