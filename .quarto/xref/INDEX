@@ -17,5 +17,20 @@
   },
   "Chapter3.qmd": {
     "Chapter3.html": "5d26d26e"
+  },
+  "Intro.qmd": {
+    "Intro.html": "02c9c8f6"
+  },
+  "Methods.qmd": {
+    "Methods.html": "0ae0692a"
+  },
+  "Results1.qmd": {
+    "Results1.html": "ee12db4a"
+  },
+  "Results2.qmd": {
+    "Results2.html": "2d5b981a"
+  },
+  "Discussion.qmd": {
+    "Discussion.html": "87b1a457"
   }
 }
