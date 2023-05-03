@@ -200,6 +200,6 @@
     "href": "Methods.html#methods",
     "title": "2  Data and Methods",
     "section": "2.2 Methods",
-    "text": "2.2 Methods\n[Brooke]\nThe second portion of our analysis comprises nested logistic regressions. The first model estimates the likelihood that a track is a song with track length as the predictor. The second model estimates the likelihood that a track is both live and acoustic with the same main predictor. Models 3 and 4 mirror models 1 and 2 but include the covariates tempo, loundess, and genre. Results are presented in odds ratios."
+    "text": "2.2 Methods\n[Brooke]\nThe second portion of our analysis comprises nested logistic regressions. The first model estimates the likelihood that a track is a song with track length as the predictor. The second model estimates the likelihood that a track is both live and acoustic with the same main predictor. Models 3 and 4 mirror models 1 and 2 but include the covariates tempo, loundess, and genre. Results are presented in odds ratios (peng2002?)."
   }
 ]
