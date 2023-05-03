@@ -124,6 +124,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   }
 }</script>
 
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 </head>
 
@@ -201,17 +202,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
    
   <ul>
   <li><a href="#background" id="toc-background" class="nav-link active" data-scroll-target="#background"><span class="toc-section-number">2.1</span>  Background</a></li>
-  <li><a href="#new-variables-using-spotify-data" id="toc-new-variables-using-spotify-data" class="nav-link" data-scroll-target="#new-variables-using-spotify-data"><span class="toc-section-number">2.2</span>  New variables using Spotify data</a>
+  <li><a href="#correlation-matrix" id="toc-correlation-matrix" class="nav-link" data-scroll-target="#correlation-matrix"><span class="toc-section-number">2.2</span>  Correlation matrix</a></li>
+  <li><a href="#extracting-factors" id="toc-extracting-factors" class="nav-link" data-scroll-target="#extracting-factors"><span class="toc-section-number">2.3</span>  Extracting factors</a>
   <ul class="collapse">
-  <li><a href="#correlation-matrix" id="toc-correlation-matrix" class="nav-link" data-scroll-target="#correlation-matrix"><span class="toc-section-number">2.2.1</span>  Correlation matrix</a></li>
-  <li><a href="#extracting-factors" id="toc-extracting-factors" class="nav-link" data-scroll-target="#extracting-factors"><span class="toc-section-number">2.2.2</span>  Extracting factors</a></li>
-  <li><a href="#factor-rotation" id="toc-factor-rotation" class="nav-link" data-scroll-target="#factor-rotation"><span class="toc-section-number">2.2.3</span>  Factor rotation</a></li>
-  <li><a href="#interpreting-findings" id="toc-interpreting-findings" class="nav-link" data-scroll-target="#interpreting-findings"><span class="toc-section-number">2.2.4</span>  Interpreting findings</a></li>
-  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion"><span class="toc-section-number">2.2.5</span>  Conclusion</a></li>
-  <li><a href="#factor-scores" id="toc-factor-scores" class="nav-link" data-scroll-target="#factor-scores"><span class="toc-section-number">2.2.6</span>  Factor scores</a></li>
-  <li><a href="#description-of-factors" id="toc-description-of-factors" class="nav-link" data-scroll-target="#description-of-factors"><span class="toc-section-number">2.2.7</span>  Description of factors</a></li>
+  <li><a href="#factor-rotation" id="toc-factor-rotation" class="nav-link" data-scroll-target="#factor-rotation"><span class="toc-section-number">2.3.1</span>  Factor rotation</a></li>
   </ul></li>
-  <li><a href="#saving-data-file-with-new-variables" id="toc-saving-data-file-with-new-variables" class="nav-link" data-scroll-target="#saving-data-file-with-new-variables"><span class="toc-section-number">2.3</span>  Saving data file with new variables</a></li>
+  <li><a href="#interpreting-findings" id="toc-interpreting-findings" class="nav-link" data-scroll-target="#interpreting-findings"><span class="toc-section-number">2.4</span>  Interpreting findings</a></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion"><span class="toc-section-number">2.5</span>  Conclusion</a></li>
+  <li><a href="#factor-scores" id="toc-factor-scores" class="nav-link" data-scroll-target="#factor-scores"><span class="toc-section-number">2.6</span>  Factor scores</a></li>
+  <li><a href="#description-of-factors" id="toc-description-of-factors" class="nav-link" data-scroll-target="#description-of-factors"><span class="toc-section-number">2.7</span>  Description of factors</a></li>
   </ul>
 </nav>
     </div>
@@ -237,22 +236,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <section id="background" class="level2" data-number="2.1">
 <h2 data-number="2.1" class="anchored" data-anchor-id="background"><span class="header-section-number">2.1</span> Background</h2>
-<p>Brooke created three new variables from the Spotify data. See <a href="#tbl-1">Table&nbsp;<span>2.1</span></a> for descriptives of the three new variables. Below outlines the steps that were taken to create them.</p>
+<p>I created three new variables from the Spotify data. See <a href="#tbl-1">Table&nbsp;<span>2.1</span></a> for descriptives of the three new variables. Below outlines the steps that were taken to create them.</p>
+<p>Specifically, I was curious to know whether there were any latent factors in the data. To examine this, I ran an exploratory factor analysis (EFA) and created factor scores based on those latent dimensions.</p>
 </section>
-<section id="new-variables-using-spotify-data" class="level2" data-number="2.2">
-<h2 data-number="2.2" class="anchored" data-anchor-id="new-variables-using-spotify-data"><span class="header-section-number">2.2</span> New variables using Spotify data</h2>
-<p>When thinking about creating three new variables from this Spotify data, I’m curious to know whether there are any latent factors within them. I’m going to run an exploratory factor analysis (EFA) to find out, and then create factor scores based on the latent dimensions that I find.</p>
-<section id="correlation-matrix" class="level3" data-number="2.2.1">
-<h3 data-number="2.2.1" class="anchored" data-anchor-id="correlation-matrix"><span class="header-section-number">2.2.1</span> Correlation matrix</h3>
-<p>Before running the EFA, first I’ll look at a correlation matrix to see whether any of the variables have reasonable correlations.</p>
+<section id="correlation-matrix" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="correlation-matrix"><span class="header-section-number">2.2</span> Correlation matrix</h2>
+<p>Before running the EFA, first I examined a correlation matrix to see whether any of the variables have reasonable correlations.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>cor_matrix <span class="ot">&lt;-</span> d <span class="sc">%&gt;%</span> </span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(danceability, energy, key, loudness, mode, speechiness, acousticness, instrumentalness, liveness, valence, tempo, duration_ms) <span class="sc">%&gt;%</span> </span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cor</span>(<span class="at">use =</span> <span class="st">"pairwise.complete.obs"</span>)</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>cor_matrix <span class="sc">%&gt;%</span> </span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">round</span>(<span class="dv">2</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  knitr<span class="sc">::</span><span class="fu">kable</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <table class="table table-sm table-striped">
 <colgroup>
@@ -473,20 +463,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 </div>
 <p>Looking at the correlation matrix, it seems that loudness and energy are highly positively correlated (r = .68), valence and danceability are positively correlated (r = .33), acousticness and energy are negatively correlated (r = -.54), and acousticness and loudness are negatively correlated (r = -.36). There are a few other smaller correlations, but these are the main ones. I wonder if there could be two factors that relate to how upbeat or chill a song is.</p>
-<p>In terms of outliers, it looks like duration in ms, mode, and key aren’t really correlated with much, but mode and key are correlated with each other. I think I’m going to eliminate duration in ms because I’m not sure that relates a ton to the other variables. I’ll keep mode and key! (Also I’m aware this is pretty arbitrary but I’m just going with it haha)</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># removing the outlier (duration_ms) from the correlation matrix</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>cor_matrix2 <span class="ot">&lt;-</span> d <span class="sc">%&gt;%</span> </span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(danceability, energy, key, loudness, mode, speechiness, acousticness, instrumentalness, liveness, valence, tempo) <span class="sc">%&gt;%</span> </span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cor</span>(<span class="at">use =</span> <span class="st">"pairwise.complete.obs"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
+<p>In terms of outliers, it looks like duration in ms, mode, and key aren’t really correlated with much, but mode and key are correlated with each other. I think I’m going to eliminate duration in ms because I’m not sure that relates a ton to the other variables. I’ll keep mode and key! (Also I’m aware this is pretty arbitrary but I’m just going with it.)</p>
 </section>
-<section id="extracting-factors" class="level3" data-number="2.2.2">
-<h3 data-number="2.2.2" class="anchored" data-anchor-id="extracting-factors"><span class="header-section-number">2.2.2</span> Extracting factors</h3>
+<section id="extracting-factors" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="extracting-factors"><span class="header-section-number">2.3</span> Extracting factors</h2>
 <p>I’m going to use factor analysis to analyze covariance (rather than unique variance or error variance). I suspect there could be three factors, with one related songs that are upbeat, another with chill song characteristics, and a third with mode and key together (I’m not really a music person but maybe those have to do with the logistics/creation of a song).</p>
-<p>To determine how many factors to extract, I’m going to keep factors with an</p>
+<p>To determine how many factors to extract, I could keep factors with an eigenvalue above 1.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">eigen</span>(cor_matrix2)<span class="sc">$</span>values</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code> [1] 2.1522908 1.5192814 1.1795078 1.0892864 0.9786859 0.9729357 0.8700836
  [8] 0.8068100 0.6375606 0.5688131 0.2247446</code></pre>
@@ -494,144 +477,31 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <p>Interestingly, there are four factors with an eigenvalue greater than 1. Let’s look at a Scree plot as well.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">VSS.scree</span>(cor_matrix2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="Methods_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
-<p>Hmmm, it almost looks like there could be a couple elbows here. I guess one elbow could be the third factor, but the more obvious elbow is the fourth factor. Maybe I will try a solution with two factors and also four factors to see how well it fits.</p>
-</section>
-<section id="factor-rotation" class="level3" data-number="2.2.3">
-<h3 data-number="2.2.3" class="anchored" data-anchor-id="factor-rotation"><span class="header-section-number">2.2.3</span> Factor rotation</h3>
-<section id="four-factor-solution" class="level4" data-number="2.2.3.1">
-<h4 data-number="2.2.3.1" class="anchored" data-anchor-id="four-factor-solution"><span class="header-section-number">2.2.3.1</span> Four factor solution</h4>
+<p>It appears there could be a couple elbows here. I guess one elbow could be the third factor, but the more obvious elbow is the fourth factor. Maybe I will try a solution with two factors and also four factors to see how well it fits.</p>
+<section id="factor-rotation" class="level3" data-number="2.3.1">
+<h3 data-number="2.3.1" class="anchored" data-anchor-id="factor-rotation"><span class="header-section-number">2.3.1</span> Factor rotation</h3>
 <p>I think it’s fine for the factors to be correlated, so I’ll use an oblique rotation and retain 4 factors. Based on the eigenvalues alone (and kind of the Scree plot), this seems to be the best fit.</p>
+<p>NOTE: I tested 2, 3, and 4 factors, and for the sake of the assignment to have three variables, I decided to go with 3 factors, so that is all I will show here.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># running the factor analysis</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>fa4 <span class="ot">&lt;-</span> <span class="fu">fa</span>(<span class="at">r =</span> cor_matrix2,      <span class="co"># Correlation matrix input</span></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>          <span class="at">nfactors =</span> <span class="dv">4</span>,         <span class="co"># Number of factors retained</span></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>          <span class="at">rotate =</span> <span class="st">"oblimin"</span>,   <span class="co"># Type of rotation used, "oblimin" for "oblique"</span></span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>          <span class="at">covar =</span> <span class="cn">FALSE</span>,        <span class="co"># Type of input matrix (we're inputting a correlation matrix)</span></span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>          <span class="at">fm =</span> <span class="st">"pa"</span>,            <span class="co"># principal axis factoring</span></span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>          <span class="at">max.iter =</span> <span class="dv">1000</span>)      <span class="co"># increasing the maximum number of iterations than the default     </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning in fa.stats(r = r, f = f, phi = phi, n.obs = n.obs, np.obs = np.obs, :
-The estimated weights for the factor scores are probably incorrect.  Try a
-different factor score estimation method.</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning in fac(r = r, nfactors = nfactors, n.obs = n.obs, rotate = rotate, : An
-ultra-Heywood case was detected.  Examine the results carefully</code></pre>
-</div>
-</div>
-</section>
-<section id="two-factor-solution" class="level4" data-number="2.2.3.2">
-<h4 data-number="2.2.3.2" class="anchored" data-anchor-id="two-factor-solution"><span class="header-section-number">2.2.3.2</span> Two factor solution</h4>
-<p>Based on the Scree plot, I think I’d also like to see what a two factor solution looks like. Again, I think it’s fine for the factors to be correlated, so I’ll use an oblique rotation and retain 2 factors.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># running the factor analysis</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>fa2 <span class="ot">&lt;-</span> <span class="fu">fa</span>(<span class="at">r =</span> cor_matrix2,      <span class="co"># Correlation matrix input</span></span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>          <span class="at">nfactors =</span> <span class="dv">2</span>,         <span class="co"># Number of factors retained</span></span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>          <span class="at">rotate =</span> <span class="st">"oblimin"</span>,   <span class="co"># Type of rotation used, "oblimin" for "oblique"</span></span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>          <span class="at">covar =</span> <span class="cn">FALSE</span>,        <span class="co"># Type of input matrix (we're inputting a correlation matrix)</span></span>
-<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>          <span class="at">fm =</span> <span class="st">"pa"</span>,            <span class="co"># principal axis factoring</span></span>
-<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>          <span class="at">max.iter =</span> <span class="dv">500</span>)       <span class="co"># increasing the maximum number of iterations than the default        </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning in fa.stats(r = r, f = f, phi = phi, n.obs = n.obs, np.obs = np.obs, :
-The estimated weights for the factor scores are probably incorrect.  Try a
-different factor score estimation method.</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning in fac(r = r, nfactors = nfactors, n.obs = n.obs, rotate = rotate, : An
-ultra-Heywood case was detected.  Examine the results carefully</code></pre>
-</div>
-</div>
-</section>
-<section id="three-factor-solution" class="level4" data-number="2.2.3.3">
-<h4 data-number="2.2.3.3" class="anchored" data-anchor-id="three-factor-solution"><span class="header-section-number">2.2.3.3</span> Three factor solution</h4>
-<p>Okay well now I’m going down a rabbit hole because I need 3 variables to complete this homework assignment so I’m hoping that a two factor solution is not the best one. I’m going to run 3 factors just in case cuz what the heck.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># running the factor analysis</span></span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>fa3 <span class="ot">&lt;-</span> <span class="fu">fa</span>(<span class="at">r =</span> cor_matrix2,      <span class="co"># Correlation matrix input</span></span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>          <span class="at">nfactors =</span> <span class="dv">3</span>,         <span class="co"># Number of factors retained</span></span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>          <span class="at">rotate =</span> <span class="st">"oblimin"</span>,   <span class="co"># Type of rotation used, "oblimin" for "oblique"</span></span>
-<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>          <span class="at">covar =</span> <span class="cn">FALSE</span>,        <span class="co"># Type of input matrix (we're inputting a correlation matrix)</span></span>
-<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>          <span class="at">fm =</span> <span class="st">"pa"</span>,            <span class="co"># principal axis factoring</span></span>
-<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>          <span class="at">max.iter =</span> <span class="dv">500</span>)       <span class="co"># increasing the maximum number of iterations than the default        </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning in fa.stats(r = r, f = f, phi = phi, n.obs = n.obs, np.obs = np.obs, :
-The estimated weights for the factor scores are probably incorrect.  Try a
-different factor score estimation method.</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning in fac(r = r, nfactors = nfactors, n.obs = n.obs, rotate = rotate, : An
-ultra-Heywood case was detected.  Examine the results carefully</code></pre>
-</div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># running the factor analysis - 3 factors</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>fa3 <span class="ot">&lt;-</span> <span class="fu">fa</span>(<span class="at">r =</span> cor_matrix2,      <span class="co"># Correlation matrix input</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>          <span class="at">nfactors =</span> <span class="dv">3</span>,         <span class="co"># Number of factors retained</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>          <span class="at">rotate =</span> <span class="st">"oblimin"</span>,   <span class="co"># Type of rotation used, "oblimin" for "oblique"</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>          <span class="at">covar =</span> <span class="cn">FALSE</span>,        <span class="co"># Type of input matrix (we're inputting a correlation matrix)</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>          <span class="at">fm =</span> <span class="st">"pa"</span>,            <span class="co"># principal axis factoring</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>          <span class="at">max.iter =</span> <span class="dv">500</span>)       <span class="co"># increasing the maximum number of iterations than the default        </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 </section>
-<section id="interpreting-findings" class="level3" data-number="2.2.4">
-<h3 data-number="2.2.4" class="anchored" data-anchor-id="interpreting-findings"><span class="header-section-number">2.2.4</span> Interpreting findings</h3>
-<p>Now that I’ve run 2, 3, and 4 factor solutions, I’m going to look at and interpret the results to see what is best. Typically we consider a strong enough link to be &gt;0.30. I’ll also look at whether there’s any variables that load onto multiple factors or neither factors (the first of which being more problematic). Finally, we’ll look at interpretability and whether the factor extraction makes sense.</p>
-<p>Also, h^2 values represent the proportion of the variance in a variable that is predictable from the factors underlying it. If communality values equal or exceed 1, there is a problem (too little data, wrong number of factors extracted). A very low communality value for a variable indicates that this variable is an “outlier variable,” because it can’t be predicted from the factors extracted.</p>
-<section id="two-factor-solution-1" class="level4" data-number="2.2.4.1">
-<h4 data-number="2.2.4.1" class="anchored" data-anchor-id="two-factor-solution-1"><span class="header-section-number">2.2.4.1</span> Two factor solution</h4>
+<section id="interpreting-findings" class="level2" data-number="2.4">
+<h2 data-number="2.4" class="anchored" data-anchor-id="interpreting-findings"><span class="header-section-number">2.4</span> Interpreting findings</h2>
+<p>I’m going to look at and interpret the results to see what is best. Typically we consider a strong enough link to be &gt;0.30. I’ll also look at whether there’s any variables that load onto multiple factors or neither factors (the first of which being more problematic). Finally, we’ll look at interpretability and whether the factor extraction makes sense.</p>
+<p>Also, h<span class="math inline">\(^2\)</span> values represent the proportion of the variance in a variable that is predictable from the factors underlying it. If communality values equal or exceed 1, there is a problem (too little data, wrong number of factors extracted). A very low communality value for a variable indicates that this variable is an “outlier variable,” because it can’t be predicted from the factors extracted.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 2 factor solution</span></span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(fa2, <span class="at">sort =</span> T)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Factor Analysis using method =  pa
-Call: fa(r = cor_matrix2, nfactors = 2, rotate = "oblimin", covar = FALSE, 
-    max.iter = 500, fm = "pa")
-Standardized loadings (pattern matrix) based upon correlation matrix
-                 item   PA1   PA2     h2     u2 com
-energy              2  1.02 -0.02 1.0430 -0.043 1.0
-loudness            4  0.67  0.07 0.4475  0.552 1.0
-acousticness        7 -0.53 -0.02 0.2817  0.718 1.0
-liveness            9  0.14 -0.11 0.0327  0.967 1.9
-danceability        1 -0.01  0.85 0.7293  0.271 1.0
-valence            10  0.13  0.40 0.1687  0.831 1.2
-speechiness         6  0.00  0.20 0.0383  0.962 1.0
-tempo              11  0.15 -0.17 0.0540  0.946 2.0
-instrumentalness    8 -0.05 -0.11 0.0148  0.985 1.3
-mode                5 -0.01 -0.07 0.0052  0.995 1.1
-key                 3  0.01  0.04 0.0014  0.999 1.1
-
-                       PA1  PA2
-SS loadings           1.83 0.99
-Proportion Var        0.17 0.09
-Cumulative Var        0.17 0.26
-Proportion Explained  0.65 0.35
-Cumulative Proportion 0.65 1.00
-
- With factor correlations of 
-      PA1   PA2
-PA1  1.00 -0.05
-PA2 -0.05  1.00
-
-Mean item complexity =  1.2
-Test of the hypothesis that 2 factors are sufficient.
-
-df null model =  55  with the objective function =  1.47
-df of  the model are 34  and the objective function was  0.23 
-
-The root mean square of the residuals (RMSR) is  0.04 
-The df corrected root mean square of the residuals is  0.06 
-
-Fit based upon off diagonal values = 0.92</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">fa.diagram</span>(fa2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<p><img src="Methods_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid" width="672"></p>
-</div>
-</div>
-<p>Here we can see that energy has a very high h^2 value that exceeds 1! This could be because it’s very likely that energy in and of itself is a factor, and many of the other variables could constitute energy. Also, mode and key have extremely low h^2 values, so maybe I could consider excluding them. Finally, there are a few variables that don’t really load well onto either factor.</p>
-</section>
-<section id="three-factor-solution-1" class="level4" data-number="2.2.4.2">
-<h4 data-number="2.2.4.2" class="anchored" data-anchor-id="three-factor-solution-1"><span class="header-section-number">2.2.4.2</span> Three factor solution</h4>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 3 factor solution</span></span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(fa3, <span class="at">sort =</span> T)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Factor Analysis using method =  pa
 Call: fa(r = cor_matrix2, nfactors = 3, rotate = "oblimin", covar = FALSE, 
@@ -674,140 +544,47 @@ The df corrected root mean square of the residuals is  0.06
 
 Fit based upon off diagonal values = 0.94</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">fa.diagram</span>(fa3)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="Methods_files/figure-html/unnamed-chunk-11-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
-<p>Here, energy still has a very high h^2 value and the only variables that really load onto the third factor are mode and key, which was predicted from the correlation matrix. Compared to the 2 factor solution, the three factor seems to be a better fit. On factor one is energy, loudness, and acousticness. Liveness and tempo kind of load onto both factors. For factor two, there is danceability, valence, speechiness, and instrumentalness. So far I think this solution is better than the two factor solution!</p>
+<p>Energy still has a very high h<span class="math inline">\(^2\)</span> value and the only variables that really load onto the third factor are mode and key, which was predicted from the correlation matrix. Compared to the 2 factor solution, the three factor seems to be a better fit. On factor one is energy, loudness, and acousticness. Liveness and tempo kind of load onto both factors. For factor two, there is danceability, valence, speechiness, and instrumentalness. So far I think this solution is better than the two factor solution!</p>
+<p>The three factor solution also fit better than the four factor solution. With the four factor solution, the h<span class="math inline">\(^2\)</span> value was still high for energy, but also very high for instrumentalness (1.56) and danceability (2.42). I don’t think these factors are as interpretable. That said, I am going with the three factor solution.</p>
 </section>
-<section id="four-factor-solution-1" class="level4" data-number="2.2.4.3">
-<h4 data-number="2.2.4.3" class="anchored" data-anchor-id="four-factor-solution-1"><span class="header-section-number">2.2.4.3</span> Four factor solution</h4>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 4 factor solution</span></span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(fa4, <span class="at">sort =</span> T)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Factor Analysis using method =  pa
-Call: fa(r = cor_matrix2, nfactors = 4, rotate = "oblimin", covar = FALSE, 
-    max.iter = 1000, fm = "pa")
-Standardized loadings (pattern matrix) based upon correlation matrix
-                 item   PA1   PA2   PA3   PA4    h2     u2 com
-danceability        1  1.56  0.00  0.00  0.00 2.423 -1.423 1.0
-valence            10  0.22  0.11 -0.14  0.00 0.077  0.923 2.2
-speechiness         6  0.11 -0.01 -0.09 -0.09 0.029  0.971 2.9
-energy              2 -0.01  1.04  0.03  0.00 1.075 -0.075 1.0
-loudness            4  0.04  0.66 -0.11 -0.02 0.446  0.554 1.1
-acousticness        7 -0.03 -0.53 -0.01  0.00 0.282  0.718 1.0
-tempo              11 -0.11  0.15  0.02  0.01 0.037  0.963 1.9
-liveness            9 -0.07  0.14  0.00 -0.02 0.026  0.974 1.6
-instrumentalness    8  0.00  0.00  1.25  0.00 1.562 -0.562 1.0
-mode                5  0.00  0.00  0.00  0.66 0.438  0.562 1.0
-key                 3 -0.01  0.00  0.00 -0.26 0.069  0.931 1.0
-
-                       PA1  PA2  PA3  PA4
-SS loadings           2.50 1.84 1.60 0.52
-Proportion Var        0.23 0.17 0.15 0.05
-Cumulative Var        0.23 0.39 0.54 0.59
-Proportion Explained  0.39 0.29 0.25 0.08
-Cumulative Proportion 0.39 0.67 0.92 1.00
-
- With factor correlations of 
-      PA1   PA2   PA3   PA4
-PA1  1.00 -0.04 -0.01 -0.06
-PA2 -0.04  1.00 -0.01 -0.01
-PA3 -0.01 -0.01  1.00  0.00
-PA4 -0.06 -0.01  0.00  1.00
-
-Mean item complexity =  1.4
-Test of the hypothesis that 4 factors are sufficient.
-
-df null model =  55  with the objective function =  1.47
-df of  the model are 17  and the objective function was  0.05 
-
-The root mean square of the residuals (RMSR) is  0.02 
-The df corrected root mean square of the residuals is  0.03 
-
-Fit based upon off diagonal values = 0.99</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">fa.diagram</span>(fa4)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<p><img src="Methods_files/figure-html/unnamed-chunk-12-1.png" class="img-fluid" width="672"></p>
-</div>
-</div>
-<p>Looking at the four factor solution, the h^2 value is still high for energy, but now also very high for instrumentalness (1.56) and danceability (2.42). I don’t think these factors are as interpretable. Also I think I shouldn’t put a ton more effort into finding the best solution at this point!!</p>
+<section id="conclusion" class="level2" data-number="2.5">
+<h2 data-number="2.5" class="anchored" data-anchor-id="conclusion"><span class="header-section-number">2.5</span> Conclusion</h2>
+<p>I’ve decided based on interpretibility and factor loadings, I’m going to go with the three factor solution. This also works best with the assingment :) Finally, about 30% of the variance is being explained by 3 factors.</p>
 </section>
-</section>
-<section id="conclusion" class="level3" data-number="2.2.5">
-<h3 data-number="2.2.5" class="anchored" data-anchor-id="conclusion"><span class="header-section-number">2.2.5</span> Conclusion</h3>
-<p>I’ve decided based on interpretibility and factor loadings, I’m going to go with the three factor solution. This also works best with the assingment :) Also, I forgot to note this, but it looks like 30% of the variance is being explained by 3 factors.</p>
-</section>
-<section id="factor-scores" class="level3" data-number="2.2.6">
-<h3 data-number="2.2.6" class="anchored" data-anchor-id="factor-scores"><span class="header-section-number">2.2.6</span> Factor scores</h3>
+<section id="factor-scores" class="level2" data-number="2.6">
+<h2 data-number="2.6" class="anchored" data-anchor-id="factor-scores"><span class="header-section-number">2.6</span> Factor scores</h2>
 <p>Next I’m going to create factor scores from the 3 factor model, which are estimates of the scores participants (songs in this case) would have received on each of the factors had the factors been measured directly. Factor scores weigh individual variables differently from one sample to the next and depend in part on the “other” variables that were included in the factor analysis.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># creating factor scores for the 3 factor model</span></span>
-<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>f_scores <span class="ot">&lt;-</span> d <span class="sc">%&gt;%</span> </span>
-<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(danceability, energy, key, loudness, mode, speechiness, acousticness, instrumentalness, liveness, valence, tempo) <span class="sc">%&gt;%</span> </span>
-<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">factor.scores</span>(fa3, <span class="at">method =</span> <span class="st">"Thurstone"</span>) <span class="co"># Thurstone method involves weighting</span></span>
-<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a><span class="co"># cbind binds a column onto the end of it</span></span>
-<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a>d <span class="ot">&lt;-</span> <span class="fu">cbind</span>(d, f_scores<span class="sc">$</span>scores) <span class="co"># just keeping the scores themselves</span></span>
-<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-9"><a href="#cb24-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-10"><a href="#cb24-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-11"><a href="#cb24-11" aria-hidden="true" tabindex="-1"></a><span class="co"># checking work</span></span>
-<span id="cb24-12"><a href="#cb24-12" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(d)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code> [1] "track_id"                 "track_name"              
- [3] "track_artist"             "track_popularity"        
- [5] "track_album_id"           "track_album_name"        
- [7] "track_album_release_date" "playlist_name"           
- [9] "playlist_id"              "playlist_genre"          
-[11] "playlist_subgenre"        "danceability"            
-[13] "energy"                   "key"                     
-[15] "loudness"                 "mode"                    
-[17] "speechiness"              "acousticness"            
-[19] "instrumentalness"         "liveness"                
-[21] "valence"                  "tempo"                   
-[23] "duration_ms"              "PA1"                     
-[25] "PA2"                      "PA3"                     </code></pre>
-</div>
-</div>
-<p>We’ve got PA1, PA2, and PA3 stuck on the end which are the factor scores!</p>
+<p>R will automatically call them PA1, PA2, and PA3. They are stuck on the end of the dataset!</p>
 </section>
-<section id="description-of-factors" class="level3" data-number="2.2.7">
-<h3 data-number="2.2.7" class="anchored" data-anchor-id="description-of-factors"><span class="header-section-number">2.2.7</span> Description of factors</h3>
+<section id="description-of-factors" class="level2" data-number="2.7">
+<h2 data-number="2.7" class="anchored" data-anchor-id="description-of-factors"><span class="header-section-number">2.7</span> Description of factors</h2>
 <p>The three factors have the following variables:</p>
-<p><strong>Factor One:</strong> 1) energy, 2) loudness 3) acousticness, 4) liveness.</p>
-<p><strong>Factor Two:</strong> 1) danceability, 2) valence, 3) speechiness, 4) tempo, 5) instrumentalness,</p>
-<p><strong>Factor Three:</strong> 1) mode, 2) key.</p>
+<p><strong>Factor One:</strong></p>
+<ul>
+<li>energy</li>
+<li>loudness</li>
+<li>acousticness</li>
+<li>liveness</li>
+</ul>
+<p><strong>Factor Two:</strong></p>
+<ul>
+<li>danceability</li>
+<li>valence</li>
+<li>speechiness</li>
+<li>tempo</li>
+<li>instrumentalness</li>
+</ul>
+<p><strong>Factor Three:</strong></p>
+<ul>
+<li>mode</li>
+<li>key</li>
+</ul>
 <p>From this, I’m going to give the factors different names that are more descriptive than PA1-PA3. Factor One seems to describe the intensity of a song and a measurable amount of property, so I’ll rename Factor One to <em>pa1_intensity</em> (pa = principal axis and 1 = originally factor 1). Factor Two seems to describe level of involvement, which may be a little bit of a stretch, but involvement meaning the extent to which singers, instruments, and movement (i.e., dancing) contribute to a song. I’ll rename Factor Two to <em>pa2_involvement</em>. Finally, Factor Three is pretty basic and describe very technical aspects of songs, so I’ll rename Factor Three to <em>pa3_technicality</em>.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># renaming factors</span></span>
-<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>d <span class="ot">&lt;-</span> d <span class="sc">%&gt;%</span> </span>
-<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="st">"pa1_intensity"</span> <span class="ot">=</span> <span class="st">"PA1"</span>,     <span class="co"># new column name = old column name</span></span>
-<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>         <span class="st">"pa2_involvement"</span> <span class="ot">=</span> <span class="st">"PA2"</span>, </span>
-<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a>         <span class="st">"pa3_technicality"</span> <span class="ot">=</span> <span class="st">"PA3"</span>) </span>
-<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a><span class="co"># checking work</span></span>
-<span id="cb26-8"><a href="#cb26-8" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(d)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code> [1] "track_id"                 "track_name"              
- [3] "track_artist"             "track_popularity"        
- [5] "track_album_id"           "track_album_name"        
- [7] "track_album_release_date" "playlist_name"           
- [9] "playlist_id"              "playlist_genre"          
-[11] "playlist_subgenre"        "danceability"            
-[13] "energy"                   "key"                     
-[15] "loudness"                 "mode"                    
-[17] "speechiness"              "acousticness"            
-[19] "instrumentalness"         "liveness"                
-[21] "valence"                  "tempo"                   
-[23] "duration_ms"              "pa1_intensity"           
-[25] "pa2_involvement"          "pa3_technicality"        </code></pre>
-</div>
-</div>
-<p>Here are some descriptive statistics for each of the three new factor score variables. The three factors are intensity, involvement, and technicality.</p>
+<p>Finally, here are some descriptive statistics for each of the three new factor score variables. The three factors are intensity, involvement, and technicality.</p>
 <div class="cell">
 <div class="cell-output-display">
 <div id="tbl-1" class="anchored">
@@ -900,18 +677,6 @@ Fit based upon off diagonal values = 0.99</code></pre>
 </table>
 </div>
 </div>
-</div>
-</section>
-</section>
-<section id="saving-data-file-with-new-variables" class="level2" data-number="2.3">
-<h2 data-number="2.3" class="anchored" data-anchor-id="saving-data-file-with-new-variables"><span class="header-section-number">2.3</span> Saving data file with new variables</h2>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co"># creating a dataset that has a merge variable (track id) and my 3 new vars</span></span>
-<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>new_vars <span class="ot">&lt;-</span> d <span class="sc">%&gt;%</span> </span>
-<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(track_id, pa1_intensity, pa2_involvement, pa3_technicality)</span>
-<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a><span class="co"># exporting the dataset</span></span>
-<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(new_vars, <span class="st">"Homework3_variables.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 
 
