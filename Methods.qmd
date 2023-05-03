@@ -46,4 +46,4 @@ kable(data[1:10,1:8], caption="\\#{tbl-tab2} Table 1: Spotify New Variables")
 
 \[Brooke\]
 
-The second portion of our analysis comprises nested logistic regressions. The first model estimates the likelihood that a track is a song with track length as the predictor. The second model estimates the likelihood that a track is both live and acoustic with the same main predictor. Models 3 and 4 mirror models 1 and 2 but include the covariates tempo, loundess, and genre. Results are presented in odds ratios [@peng2002].
+The second portion of our analysis comprises nested logistic regressions. The first model estimates the likelihood that a track is a song with track length as the predictor. The second model estimates the likelihood that a track is both live and acoustic with the same main predictor. Models 3 and 4 mirror models 1 and 2 but include the covariates tempo, loundess, and genre. Results are presented in odds ratios [@pengIntroductionLogisticRegression2002].
