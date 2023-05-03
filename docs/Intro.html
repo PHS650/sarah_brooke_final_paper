@@ -20,6 +20,25 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1.6em;
   vertical-align: middle;
 }
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
 </style>
 
 
@@ -105,7 +124,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Methods.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Methods.html</span></a>
+  <a href="./Methods.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Methods</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -133,7 +152,13 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#brooke" id="toc-brooke" class="nav-link active" data-scroll-target="#brooke"><span class="toc-section-number">1.1</span>  Brooke</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -155,8 +180,27 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
+<section id="brooke" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="brooke"><span class="header-section-number">1.1</span> Brooke</h2>
+<p>From an exploratory factor analysis of several variables in the TidyTuesday Spotify data, three factors emerged that describe various components of the songs <span class="citation" data-cites="tabachnickUsingMultivariateStatistics2019">(<a href="references.html#ref-tabachnickUsingMultivariateStatistics2019" role="doc-biblioref">Tabachnick, Fidell, and Ullman 2019</a>)</span>. See <a href="#fig-fa3">Figure&nbsp;<span>1.1</span></a> for a visual description of the factors.</p>
+<div id="fig-fa3" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="FA3_diagram.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;1.1: Three factor model of Spotify data</figcaption><p></p>
+</figure>
+</div>
+<p>It is hypothesized that both the intensity and involvement factors will predict song popularity such that the higher the factor score, the more likely the the song will have a higher popularity score (over and above the effects of the other factor scores). The third factor, technicality, will not significantly predict song popularity.</p>
+<p><strong>Compact model:</strong> song_popularity = b<sub>0</sub></p>
+<p><strong>Augemented model:</strong> song_popularity = b<sub>0</sub> + b<sub>1_intensity</sub> + b<sub>2_involvement</sub> + b<sub>3_technicality</sub> (all predictors are continuous)</p>
+<p>More details regarding the specifics of the dataset, including how it was collected and compiled, can be obtained from TidyTuesday at the following link: <a href="https://github.com/rfordatascience/tidytuesday/blob/master/data/2020/2020-01-21/readme.md">Tidy Tuesday</a></p>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography" style="display: none">
+<div id="ref-tabachnickUsingMultivariateStatistics2019" class="csl-entry" role="doc-biblioentry">
+Tabachnick, Barbara G., Linda S. Fidell, and Jodie B. Ullman. 2019. <em>Using Multivariate Statistics</em>. Seventh edition. <span>NY, NY</span>: <span>Pearson</span>.
+</div>
+</div>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -300,7 +344,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
   <div class="nav-page nav-page-next">
       <a href="./Methods.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Methods.html</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Methods</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

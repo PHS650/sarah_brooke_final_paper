@@ -1,4 +1,6 @@
-# Methods: Brooke's Spotify data variable creation
+# Methods 
+
+# Brooke's Spotify data variable creation
 
 ## Background
 
@@ -22,7 +24,6 @@ d <- tidytuesdayR::tt_load('2020-01-21')$spotify_songs
 
 names(d)
 ```
-
 
 ## Correlation matrix
 
@@ -69,7 +70,7 @@ It appears there could be a couple elbows here. I guess one elbow could be the t
 
 ### Factor rotation
 
-I think it's fine for the factors to be correlated, so I'll use an oblique rotation and retain 4 factors. Based on the eigenvalues alone (and kind of the Scree plot), this seems to be the best fit. 
+I think it's fine for the factors to be correlated, so I'll use an oblique rotation and retain 4 factors. Based on the eigenvalues alone (and kind of the Scree plot), this seems to be the best fit.
 
 NOTE: I tested 2, 3, and 4 factors, and for the sake of the assignment to have three variables, I decided to go with 3 factors, so that is all I will show here.
 
@@ -85,7 +86,6 @@ fa4 <- fa(r = cor_matrix2,      # Correlation matrix input
 # Based on the Scree plot, I think I'd also like to see what a two factor solution looks like. Again, I think it's fine for the factors to be correlated, so I'll use an oblique rotation and retain 2 factors.
 ```
 
-
 ```{r, include = F}
 # running the factor analysis - 2 factors
 fa2 <- fa(r = cor_matrix2,      # Correlation matrix input
@@ -98,7 +98,6 @@ fa2 <- fa(r = cor_matrix2,      # Correlation matrix input
 # Okay well now I'm going down a rabbit hole because I need 3 variables to complete this homework assignment so I'm hoping that a two factor solution is not the best one. I'm going to run 3 factors just in case cuz what the heck.
 ```
 
-
 ```{r, warning = F}
 # running the factor analysis - 3 factors
 fa3 <- fa(r = cor_matrix2,      # Correlation matrix input
@@ -108,7 +107,6 @@ fa3 <- fa(r = cor_matrix2,      # Correlation matrix input
           fm = "pa",            # principal axis factoring
           max.iter = 500)       # increasing the maximum number of iterations than the default        
 ```
-
 
 ## Interpreting findings
 
@@ -124,7 +122,6 @@ fa.diagram(fa2)
 # Here we can see that energy has a very high h\^2 value that exceeds 1! This could be because it's very likely that energy in and of itself is a factor, and many of the other variables could constitute energy. Also, mode and key have extremely low h\^2 values, so maybe I could consider excluding them. Finally, there are a few variables that don't really load well onto either factor.
 ```
 
-
 ```{r, echo = F}
 # 3 factor solution
 print(fa3, sort = T)
@@ -132,7 +129,6 @@ fa.diagram(fa3)
 ```
 
 Energy still has a very high h$^2$ value and the only variables that really load onto the third factor are mode and key, which was predicted from the correlation matrix. Compared to the 2 factor solution, the three factor seems to be a better fit. On factor one is energy, loudness, and acousticness. Liveness and tempo kind of load onto both factors. For factor two, there is danceability, valence, speechiness, and instrumentalness. So far I think this solution is better than the two factor solution!
-
 
 ```{r, include = F}
 # 4 factor solution
@@ -142,11 +138,9 @@ fa.diagram(fa4)
 
 The three factor solution also fit better than the four factor solution. With the four factor solution, the h$^2$ value was still high for energy, but also very high for instrumentalness (1.56) and danceability (2.42). I don't think these factors are as interpretable. That said, I am going with the three factor solution.
 
-
 ## Conclusion
 
 I've decided based on interpretibility and factor loadings, I'm going to go with the three factor solution. This also works best with the assingment :) Finally, about 30% of the variance is being explained by 3 factors.
-
 
 ## Factor scores
 
@@ -167,30 +161,29 @@ names(d)
 
 R will automatically call them PA1, PA2, and PA3. They are stuck on the end of the dataset!
 
-
 ## Description of factors
 
 The three factors have the following variables:
 
 **Factor One:**
 
-- energy
-- loudness
-- acousticness
-- liveness
+-   energy
+-   loudness
+-   acousticness
+-   liveness
 
 **Factor Two:**
 
-- danceability
-- valence
-- speechiness
-- tempo
-- instrumentalness
+-   danceability
+-   valence
+-   speechiness
+-   tempo
+-   instrumentalness
 
 **Factor Three:**
 
-- mode
-- key
+-   mode
+-   key
 
 From this, I'm going to give the factors different names that are more descriptive than PA1-PA3. Factor One seems to describe the intensity of a song and a measurable amount of property, so I'll rename Factor One to *pa1_intensity* (pa = principal axis and 1 = originally factor 1). Factor Two seems to describe level of involvement, which may be a little bit of a stretch, but involvement meaning the extent to which singers, instruments, and movement (i.e., dancing) contribute to a song. I'll rename Factor Two to *pa2_involvement*. Finally, Factor Three is pretty basic and describe very technical aspects of songs, so I'll rename Factor Three to *pa3_technicality*.
 
@@ -216,7 +209,6 @@ d %>%
   round(2) %>% 
   knitr::kable()
 ```
-
 
 ```{r, include = F}
 ## Saving data file with new variables

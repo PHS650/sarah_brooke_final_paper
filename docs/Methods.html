@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Final Paper - 2&nbsp; Methods: Brooke’s Spotify data variable creation</title>
+<title>Final Paper - 2&nbsp; Methods</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -134,7 +134,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Methods: Brooke’s Spotify data variable creation</span></h1>
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Methods</span></h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -169,7 +169,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Methods.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Methods: Brooke’s Spotify data variable creation</span></a>
+  <a href="./Methods.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Methods</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -201,16 +201,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#background" id="toc-background" class="nav-link active" data-scroll-target="#background"><span class="toc-section-number">2.1</span>  Background</a></li>
-  <li><a href="#correlation-matrix" id="toc-correlation-matrix" class="nav-link" data-scroll-target="#correlation-matrix"><span class="toc-section-number">2.2</span>  Correlation matrix</a></li>
-  <li><a href="#extracting-factors" id="toc-extracting-factors" class="nav-link" data-scroll-target="#extracting-factors"><span class="toc-section-number">2.3</span>  Extracting factors</a>
+  <li><a href="#brookes-spotify-data-variable-creation" id="toc-brookes-spotify-data-variable-creation" class="nav-link active" data-scroll-target="#brookes-spotify-data-variable-creation"><span class="toc-section-number">3</span>  Brooke’s Spotify data variable creation</a>
   <ul class="collapse">
-  <li><a href="#factor-rotation" id="toc-factor-rotation" class="nav-link" data-scroll-target="#factor-rotation"><span class="toc-section-number">2.3.1</span>  Factor rotation</a></li>
+  <li><a href="#background" id="toc-background" class="nav-link" data-scroll-target="#background"><span class="toc-section-number">3.1</span>  Background</a></li>
+  <li><a href="#correlation-matrix" id="toc-correlation-matrix" class="nav-link" data-scroll-target="#correlation-matrix"><span class="toc-section-number">3.2</span>  Correlation matrix</a></li>
+  <li><a href="#extracting-factors" id="toc-extracting-factors" class="nav-link" data-scroll-target="#extracting-factors"><span class="toc-section-number">3.3</span>  Extracting factors</a>
+  <ul class="collapse">
+  <li><a href="#factor-rotation" id="toc-factor-rotation" class="nav-link" data-scroll-target="#factor-rotation"><span class="toc-section-number">3.3.1</span>  Factor rotation</a></li>
   </ul></li>
-  <li><a href="#interpreting-findings" id="toc-interpreting-findings" class="nav-link" data-scroll-target="#interpreting-findings"><span class="toc-section-number">2.4</span>  Interpreting findings</a></li>
-  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion"><span class="toc-section-number">2.5</span>  Conclusion</a></li>
-  <li><a href="#factor-scores" id="toc-factor-scores" class="nav-link" data-scroll-target="#factor-scores"><span class="toc-section-number">2.6</span>  Factor scores</a></li>
-  <li><a href="#description-of-factors" id="toc-description-of-factors" class="nav-link" data-scroll-target="#description-of-factors"><span class="toc-section-number">2.7</span>  Description of factors</a></li>
+  <li><a href="#interpreting-findings" id="toc-interpreting-findings" class="nav-link" data-scroll-target="#interpreting-findings"><span class="toc-section-number">3.4</span>  Interpreting findings</a></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion"><span class="toc-section-number">3.5</span>  Conclusion</a></li>
+  <li><a href="#factor-scores" id="toc-factor-scores" class="nav-link" data-scroll-target="#factor-scores"><span class="toc-section-number">3.6</span>  Factor scores</a></li>
+  <li><a href="#description-of-factors" id="toc-description-of-factors" class="nav-link" data-scroll-target="#description-of-factors"><span class="toc-section-number">3.7</span>  Description of factors</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -219,7 +222,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Methods: Brooke’s Spotify data variable creation</span></h1>
+<h1 class="title d-none d-lg-block"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Methods</span></h1>
 </div>
 
 
@@ -234,13 +237,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 </header>
 
-<section id="background" class="level2" data-number="2.1">
-<h2 data-number="2.1" class="anchored" data-anchor-id="background"><span class="header-section-number">2.1</span> Background</h2>
-<p>I created three new variables from the Spotify data. See <a href="#tbl-1">Table&nbsp;<span>2.1</span></a> for descriptives of the three new variables. Below outlines the steps that were taken to create them.</p>
+<section id="brookes-spotify-data-variable-creation" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> Brooke’s Spotify data variable creation</h1>
+<section id="background" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="background"><span class="header-section-number">3.1</span> Background</h2>
+<p>I created three new variables from the Spotify data. See <a href="#tbl-1">Table&nbsp;<span>3.1</span></a> for descriptives of the three new variables. Below outlines the steps that were taken to create them.</p>
 <p>Specifically, I was curious to know whether there were any latent factors in the data. To examine this, I ran an exploratory factor analysis (EFA) and created factor scores based on those latent dimensions.</p>
 </section>
-<section id="correlation-matrix" class="level2" data-number="2.2">
-<h2 data-number="2.2" class="anchored" data-anchor-id="correlation-matrix"><span class="header-section-number">2.2</span> Correlation matrix</h2>
+<section id="correlation-matrix" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="correlation-matrix"><span class="header-section-number">3.2</span> Correlation matrix</h2>
 <p>Before running the EFA, first I examined a correlation matrix to see whether any of the variables have reasonable correlations.</p>
 <div class="cell">
 <div class="cell-output-display">
@@ -465,8 +470,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Looking at the correlation matrix, it seems that loudness and energy are highly positively correlated (r = .68), valence and danceability are positively correlated (r = .33), acousticness and energy are negatively correlated (r = -.54), and acousticness and loudness are negatively correlated (r = -.36). There are a few other smaller correlations, but these are the main ones. I wonder if there could be two factors that relate to how upbeat or chill a song is.</p>
 <p>In terms of outliers, it looks like duration in ms, mode, and key aren’t really correlated with much, but mode and key are correlated with each other. I think I’m going to eliminate duration in ms because I’m not sure that relates a ton to the other variables. I’ll keep mode and key! (Also I’m aware this is pretty arbitrary but I’m just going with it.)</p>
 </section>
-<section id="extracting-factors" class="level2" data-number="2.3">
-<h2 data-number="2.3" class="anchored" data-anchor-id="extracting-factors"><span class="header-section-number">2.3</span> Extracting factors</h2>
+<section id="extracting-factors" class="level2" data-number="3.3">
+<h2 data-number="3.3" class="anchored" data-anchor-id="extracting-factors"><span class="header-section-number">3.3</span> Extracting factors</h2>
 <p>I’m going to use factor analysis to analyze covariance (rather than unique variance or error variance). I suspect there could be three factors, with one related songs that are upbeat, another with chill song characteristics, and a third with mode and key together (I’m not really a music person but maybe those have to do with the logistics/creation of a song).</p>
 <p>To determine how many factors to extract, I could keep factors with an eigenvalue above 1.</p>
 <div class="cell">
@@ -482,8 +487,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 </div>
 <p>It appears there could be a couple elbows here. I guess one elbow could be the third factor, but the more obvious elbow is the fourth factor. Maybe I will try a solution with two factors and also four factors to see how well it fits.</p>
-<section id="factor-rotation" class="level3" data-number="2.3.1">
-<h3 data-number="2.3.1" class="anchored" data-anchor-id="factor-rotation"><span class="header-section-number">2.3.1</span> Factor rotation</h3>
+<section id="factor-rotation" class="level3" data-number="3.3.1">
+<h3 data-number="3.3.1" class="anchored" data-anchor-id="factor-rotation"><span class="header-section-number">3.3.1</span> Factor rotation</h3>
 <p>I think it’s fine for the factors to be correlated, so I’ll use an oblique rotation and retain 4 factors. Based on the eigenvalues alone (and kind of the Scree plot), this seems to be the best fit.</p>
 <p>NOTE: I tested 2, 3, and 4 factors, and for the sake of the assignment to have three variables, I decided to go with 3 factors, so that is all I will show here.</p>
 <div class="cell">
@@ -497,8 +502,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 </section>
 </section>
-<section id="interpreting-findings" class="level2" data-number="2.4">
-<h2 data-number="2.4" class="anchored" data-anchor-id="interpreting-findings"><span class="header-section-number">2.4</span> Interpreting findings</h2>
+<section id="interpreting-findings" class="level2" data-number="3.4">
+<h2 data-number="3.4" class="anchored" data-anchor-id="interpreting-findings"><span class="header-section-number">3.4</span> Interpreting findings</h2>
 <p>I’m going to look at and interpret the results to see what is best. Typically we consider a strong enough link to be &gt;0.30. I’ll also look at whether there’s any variables that load onto multiple factors or neither factors (the first of which being more problematic). Finally, we’ll look at interpretability and whether the factor extraction makes sense.</p>
 <p>Also, h<span class="math inline">\(^2\)</span> values represent the proportion of the variance in a variable that is predictable from the factors underlying it. If communality values equal or exceed 1, there is a problem (too little data, wrong number of factors extracted). A very low communality value for a variable indicates that this variable is an “outlier variable,” because it can’t be predicted from the factors extracted.</p>
 <div class="cell">
@@ -551,17 +556,17 @@ Fit based upon off diagonal values = 0.94</code></pre>
 <p>Energy still has a very high h<span class="math inline">\(^2\)</span> value and the only variables that really load onto the third factor are mode and key, which was predicted from the correlation matrix. Compared to the 2 factor solution, the three factor seems to be a better fit. On factor one is energy, loudness, and acousticness. Liveness and tempo kind of load onto both factors. For factor two, there is danceability, valence, speechiness, and instrumentalness. So far I think this solution is better than the two factor solution!</p>
 <p>The three factor solution also fit better than the four factor solution. With the four factor solution, the h<span class="math inline">\(^2\)</span> value was still high for energy, but also very high for instrumentalness (1.56) and danceability (2.42). I don’t think these factors are as interpretable. That said, I am going with the three factor solution.</p>
 </section>
-<section id="conclusion" class="level2" data-number="2.5">
-<h2 data-number="2.5" class="anchored" data-anchor-id="conclusion"><span class="header-section-number">2.5</span> Conclusion</h2>
+<section id="conclusion" class="level2" data-number="3.5">
+<h2 data-number="3.5" class="anchored" data-anchor-id="conclusion"><span class="header-section-number">3.5</span> Conclusion</h2>
 <p>I’ve decided based on interpretibility and factor loadings, I’m going to go with the three factor solution. This also works best with the assingment :) Finally, about 30% of the variance is being explained by 3 factors.</p>
 </section>
-<section id="factor-scores" class="level2" data-number="2.6">
-<h2 data-number="2.6" class="anchored" data-anchor-id="factor-scores"><span class="header-section-number">2.6</span> Factor scores</h2>
+<section id="factor-scores" class="level2" data-number="3.6">
+<h2 data-number="3.6" class="anchored" data-anchor-id="factor-scores"><span class="header-section-number">3.6</span> Factor scores</h2>
 <p>Next I’m going to create factor scores from the 3 factor model, which are estimates of the scores participants (songs in this case) would have received on each of the factors had the factors been measured directly. Factor scores weigh individual variables differently from one sample to the next and depend in part on the “other” variables that were included in the factor analysis.</p>
 <p>R will automatically call them PA1, PA2, and PA3. They are stuck on the end of the dataset!</p>
 </section>
-<section id="description-of-factors" class="level2" data-number="2.7">
-<h2 data-number="2.7" class="anchored" data-anchor-id="description-of-factors"><span class="header-section-number">2.7</span> Description of factors</h2>
+<section id="description-of-factors" class="level2" data-number="3.7">
+<h2 data-number="3.7" class="anchored" data-anchor-id="description-of-factors"><span class="header-section-number">3.7</span> Description of factors</h2>
 <p>The three factors have the following variables:</p>
 <p><strong>Factor One:</strong></p>
 <ul>
@@ -589,7 +594,7 @@ Fit based upon off diagonal values = 0.94</code></pre>
 <div class="cell-output-display">
 <div id="tbl-1" class="anchored">
 <table class="table table-sm table-striped">
-<caption>Table&nbsp;2.1: Descriptive Statistics for Spotify Data Factor Scores</caption>
+<caption>Table&nbsp;3.1: Descriptive Statistics for Spotify Data Factor Scores</caption>
 <colgroup>
 <col style="width: 17%">
 <col style="width: 5%">
@@ -680,6 +685,7 @@ Fit based upon off diagonal values = 0.94</code></pre>
 </div>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

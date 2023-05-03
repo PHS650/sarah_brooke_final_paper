@@ -1,2 +1,15 @@
 # Introduction
 
+## Brooke
+
+From an exploratory factor analysis of several variables in the TidyTuesday Spotify data, three factors emerged that describe various components of the songs [@tabachnickUsingMultivariateStatistics2019]. See @fig-fa3 for a visual description of the factors.
+
+![Three factor model of Spotify data](FA3_diagram.png){#fig-fa3}
+
+It is hypothesized that both the intensity and involvement factors will predict song popularity such that the higher the factor score, the more likely the the song will have a higher popularity score (over and above the effects of the other factor scores). The third factor, technicality, will not significantly predict song popularity.
+
+**Compact model:** song_popularity = b~0~
+
+**Augemented model:** song_popularity = b~0~ + b~1_intensity~ + b~2_involvement~ + b~3_technicality~ (all predictors are continuous)
+
+More details regarding the specifics of the dataset, including how it was collected and compiled, can be obtained from TidyTuesday at the following link: [Tidy Tuesday](https://github.com/rfordatascience/tidytuesday/blob/master/data/2020/2020-01-21/readme.md)
