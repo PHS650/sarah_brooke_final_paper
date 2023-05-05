@@ -10,7 +10,7 @@ library(tidyverse)
 library(psych)
 
 # loading data
-d <- read.csv("/Users/brookesasia/Desktop/UW-Madison/PHS 650/sarah_brooke_final_paper/Homework3_variables.csv")
+d <- read.csv("Homework3_variables.csv")
 
 spotify_songs <- tidytuesdayR::tt_load('2020-01-21')$spotify_songs
 
