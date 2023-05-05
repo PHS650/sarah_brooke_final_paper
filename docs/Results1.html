@@ -204,6 +204,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <ul class="collapse">
   <li><a href="#hypothesis" id="toc-hypothesis" class="nav-link" data-scroll-target="#hypothesis"><span class="toc-section-number">4.1</span>  Hypothesis</a></li>
   <li><a href="#linear-model" id="toc-linear-model" class="nav-link" data-scroll-target="#linear-model"><span class="toc-section-number">4.2</span>  Linear model</a></li>
+  <li><a href="#results" id="toc-results" class="nav-link" data-scroll-target="#results"><span class="toc-section-number">4.3</span>  Results</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -232,81 +233,66 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h1 data-number="4"><span class="header-section-number">4</span> Brooke’s results</h1>
 <section id="hypothesis" class="level2" data-number="4.1">
 <h2 data-number="4.1" class="anchored" data-anchor-id="hypothesis"><span class="header-section-number">4.1</span> Hypothesis</h2>
-<p>As a reminder, this project hypothesized that both the intensity and involvement factors will predict song popularity such that the higher the factor score, the more likely the the song will have a higher popularity score (over and above the effects of the other factor scores). The third factor, technicality, will not significantly predict song popularity.</p>
+<p>The first aim of this project hypothesized that both the intensity and involvement factors will predict song popularity such that the higher the factor score, the more likely the the song will have a higher popularity score (over and above the effects of the other factor scores). The third factor, technicality, will not significantly predict song popularity.</p>
 </section>
 <section id="linear-model" class="level2" data-number="4.2">
 <h2 data-number="4.2" class="anchored" data-anchor-id="linear-model"><span class="header-section-number">4.2</span> Linear model</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>m_pop <span class="ot">&lt;-</span> <span class="fu">lm</span>(track_popularity <span class="sc">~</span> pa1_intensity <span class="sc">+</span> pa2_involvement <span class="sc">+</span> pa3_technicality, <span class="at">data =</span> d)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>m_pop_results <span class="ot">&lt;-</span> <span class="fu">summary</span>(m_pop)</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>m_pop_results</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>
-Call:
-lm(formula = track_popularity ~ pa1_intensity + pa2_involvement + 
-    pa3_technicality, data = d)
-
-Residuals:
-    Min      1Q  Median      3Q     Max 
--66.700 -18.798   3.843  21.793  53.520 
-
-Coefficients:
-                 Estimate Std. Error t value Pr(&gt;|t|)    
-(Intercept)      49.82176    0.12358 403.145   &lt;2e-16 ***
-pa1_intensity    -3.58795    0.12350 -29.053   &lt;2e-16 ***
-pa2_involvement   3.63513    0.14556  24.973   &lt;2e-16 ***
-pa3_technicality  0.05547    0.18640   0.298    0.766    
----
-Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
-
-Residual standard error: 26.6 on 46399 degrees of freedom
-Multiple R-squared:  0.0329,    Adjusted R-squared:  0.03284 
-F-statistic: 526.2 on 3 and 46399 DF,  p-value: &lt; 2.2e-16</code></pre>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># linear model regressing track popularity on the three factor scores</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>m_pop <span class="ot">&lt;-</span> <span class="fu">lm</span>(track_popularity <span class="sc">~</span> pa1_intensity <span class="sc">+</span> pa2_involvement <span class="sc">+</span> pa3_technicality, <span class="at">data =</span> d)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>stargazer<span class="sc">::</span><span class="fu">stargazer</span>(m_pop, <span class="at">title =</span> <span class="st">"Results"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>
-% Table created by stargazer v.5.2.3 by Marek Hlavac, Social Policy Institute. E-mail: marek.hlavac at gmail.com
-% Date and time: Thu, May 04, 2023 - 17:59:13
-\begin{table}[!htbp] \centering 
-  \caption{Results} 
-  \label{} 
-\begin{tabular}{@{\extracolsep{5pt}}lc} 
-\\[-1.8ex]\hline 
-\hline \\[-1.8ex] 
- &amp; \multicolumn{1}{c}{\textit{Dependent variable:}} \\ 
-\cline{2-2} 
-\\[-1.8ex] &amp; track\_popularity \\ 
-\hline \\[-1.8ex] 
- pa1\_intensity &amp; $-$3.588$^{***}$ \\ 
-  &amp; (0.123) \\ 
-  &amp; \\ 
- pa2\_involvement &amp; 3.635$^{***}$ \\ 
-  &amp; (0.146) \\ 
-  &amp; \\ 
- pa3\_technicality &amp; 0.055 \\ 
-  &amp; (0.186) \\ 
-  &amp; \\ 
- Constant &amp; 49.822$^{***}$ \\ 
-  &amp; (0.124) \\ 
-  &amp; \\ 
-\hline \\[-1.8ex] 
-Observations &amp; 46,403 \\ 
-R$^{2}$ &amp; 0.033 \\ 
-Adjusted R$^{2}$ &amp; 0.033 \\ 
-Residual Std. Error &amp; 26.600 (df = 46399) \\ 
-F Statistic &amp; 526.194$^{***}$ (df = 3; 46399) \\ 
-\hline 
-\hline \\[-1.8ex] 
-\textit{Note:}  &amp; \multicolumn{1}{r}{$^{*}$p$&lt;$0.1; $^{**}$p$&lt;$0.05; $^{***}$p$&lt;$0.01} \\ 
-\end{tabular} 
-\end{table} </code></pre>
+</section>
+<section id="results" class="level2" data-number="4.3">
+<h2 data-number="4.3" class="anchored" data-anchor-id="results"><span class="header-section-number">4.3</span> Results</h2>
+<div class="cell">
+<div class="cell-output-display">
+<div id="tbl-1" class="anchored">
+<table class="table table-sm table-striped">
+<caption>Table&nbsp;4.1: Results from linear model regressing song popularity on factor scores</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Predictor</th>
+<th style="text-align: right;">b</th>
+<th style="text-align: right;">SE</th>
+<th style="text-align: right;">t</th>
+<th style="text-align: left;">p</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Intercept</td>
+<td style="text-align: right;">49.82</td>
+<td style="text-align: right;">0.12</td>
+<td style="text-align: right;">403.14</td>
+<td style="text-align: left;">&lt;0.001</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Intensity</td>
+<td style="text-align: right;">-3.59</td>
+<td style="text-align: right;">0.12</td>
+<td style="text-align: right;">-29.05</td>
+<td style="text-align: left;">&lt;0.001</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Involvement</td>
+<td style="text-align: right;">3.64</td>
+<td style="text-align: right;">0.15</td>
+<td style="text-align: right;">24.97</td>
+<td style="text-align: left;">&lt;0.001</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Technicality</td>
+<td style="text-align: right;">0.06</td>
+<td style="text-align: right;">0.19</td>
+<td style="text-align: right;">0.30</td>
+<td style="text-align: left;">0.766</td>
+</tr>
+</tbody>
+</table>
 </div>
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># notes for later</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="co"># save the summary into a variable, X. then you have X as a data frame and you can treat it like a dataframe where you create variables and lower confidence interval is b minus SE and create it as a variable and then do the same thing for the upper. then you could also round all of the variables and select out what you do and don't want. and then write it kable whatever when you have the way you want it to look.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+</div>
+<p>See <a href="#tbl-1">Table&nbsp;<span>4.1</span></a> for a summary of the results, which indicated that the intensity of a song predicted popularity in a negative direction, while involvement predicted song popularity in a positive direction. As expected, the technicality of a song did not significantly predict song popularity.</p>
 
 
 </section>

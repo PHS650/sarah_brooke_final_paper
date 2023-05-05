@@ -193,7 +193,7 @@
     "href": "Methods.html#background",
     "title": "2  Methods",
     "section": "3.1 Background",
-    "text": "3.1 Background\nI created three new variables from the Spotify data. See Table 3.1 for descriptives of the three new variables. Below outlines the steps that were taken to create them.\nSpecifically, I was curious to know whether there were any latent factors in the data. To examine this, I ran an exploratory factor analysis (EFA) and created factor scores based on those latent dimensions."
+    "text": "3.1 Background\nI created three new variables from the Spotify data. See Table 4.1 for descriptives of the three new variables. Below outlines the steps that were taken to create them.\nSpecifically, I was curious to know whether there were any latent factors in the data. To examine this, I ran an exploratory factor analysis (EFA) and created factor scores based on those latent dimensions."
   },
   {
     "objectID": "Methods.html#loading-packages",
@@ -277,13 +277,20 @@
     "href": "Results1.html#hypothesis",
     "title": "3  Results",
     "section": "4.1 Hypothesis",
-    "text": "4.1 Hypothesis\nAs a reminder, this project hypothesized that both the intensity and involvement factors will predict song popularity such that the higher the factor score, the more likely the the song will have a higher popularity score (over and above the effects of the other factor scores). The third factor, technicality, will not significantly predict song popularity."
+    "text": "4.1 Hypothesis\nThe first aim of this project hypothesized that both the intensity and involvement factors will predict song popularity such that the higher the factor score, the more likely the the song will have a higher popularity score (over and above the effects of the other factor scores). The third factor, technicality, will not significantly predict song popularity."
   },
   {
     "objectID": "Results1.html#linear-model",
     "href": "Results1.html#linear-model",
     "title": "3  Results",
     "section": "4.2 Linear model",
-    "text": "4.2 Linear model\n\nm_pop <- lm(track_popularity ~ pa1_intensity + pa2_involvement + pa3_technicality, data = d)\n\nm_pop_results <- summary(m_pop)\n\nm_pop_results\n\n\nCall:\nlm(formula = track_popularity ~ pa1_intensity + pa2_involvement + \n    pa3_technicality, data = d)\n\nResiduals:\n    Min      1Q  Median      3Q     Max \n-66.700 -18.798   3.843  21.793  53.520 \n\nCoefficients:\n                 Estimate Std. Error t value Pr(>|t|)    \n(Intercept)      49.82176    0.12358 403.145   <2e-16 ***\npa1_intensity    -3.58795    0.12350 -29.053   <2e-16 ***\npa2_involvement   3.63513    0.14556  24.973   <2e-16 ***\npa3_technicality  0.05547    0.18640   0.298    0.766    \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 26.6 on 46399 degrees of freedom\nMultiple R-squared:  0.0329,    Adjusted R-squared:  0.03284 \nF-statistic: 526.2 on 3 and 46399 DF,  p-value: < 2.2e-16\n\nstargazer::stargazer(m_pop, title = \"Results\")\n\n\n% Table created by stargazer v.5.2.3 by Marek Hlavac, Social Policy Institute. E-mail: marek.hlavac at gmail.com\n% Date and time: Thu, May 04, 2023 - 17:59:13\n\\begin{table}[!htbp] \\centering \n  \\caption{Results} \n  \\label{} \n\\begin{tabular}{@{\\extracolsep{5pt}}lc} \n\\\\[-1.8ex]\\hline \n\\hline \\\\[-1.8ex] \n & \\multicolumn{1}{c}{\\textit{Dependent variable:}} \\\\ \n\\cline{2-2} \n\\\\[-1.8ex] & track\\_popularity \\\\ \n\\hline \\\\[-1.8ex] \n pa1\\_intensity & $-$3.588$^{***}$ \\\\ \n  & (0.123) \\\\ \n  & \\\\ \n pa2\\_involvement & 3.635$^{***}$ \\\\ \n  & (0.146) \\\\ \n  & \\\\ \n pa3\\_technicality & 0.055 \\\\ \n  & (0.186) \\\\ \n  & \\\\ \n Constant & 49.822$^{***}$ \\\\ \n  & (0.124) \\\\ \n  & \\\\ \n\\hline \\\\[-1.8ex] \nObservations & 46,403 \\\\ \nR$^{2}$ & 0.033 \\\\ \nAdjusted R$^{2}$ & 0.033 \\\\ \nResidual Std. Error & 26.600 (df = 46399) \\\\ \nF Statistic & 526.194$^{***}$ (df = 3; 46399) \\\\ \n\\hline \n\\hline \\\\[-1.8ex] \n\\textit{Note:}  & \\multicolumn{1}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\\\ \n\\end{tabular} \n\\end{table} \n\n# notes for later\n# save the summary into a variable, X. then you have X as a data frame and you can treat it like a dataframe where you create variables and lower confidence interval is b minus SE and create it as a variable and then do the same thing for the upper. then you could also round all of the variables and select out what you do and don't want. and then write it kable whatever when you have the way you want it to look."
+    "text": "4.2 Linear model\n\n# linear model regressing track popularity on the three factor scores\nm_pop <- lm(track_popularity ~ pa1_intensity + pa2_involvement + pa3_technicality, data = d)"
+  },
+  {
+    "objectID": "Results1.html#results",
+    "href": "Results1.html#results",
+    "title": "3  Results",
+    "section": "4.3 Results",
+    "text": "4.3 Results\n\n\n\n\nTable 4.1: Results from linear model regressing song popularity on factor scores\n\n\nPredictor\nb\nSE\nt\np\n\n\n\n\nIntercept\n49.82\n0.12\n403.14\n<0.001\n\n\nIntensity\n-3.59\n0.12\n-29.05\n<0.001\n\n\nInvolvement\n3.64\n0.15\n24.97\n<0.001\n\n\nTechnicality\n0.06\n0.19\n0.30\n0.766\n\n\n\n\n\n\nSee Table 4.1 for a summary of the results, which indicated that the intensity of a song predicted popularity in a negative direction, while involvement predicted song popularity in a positive direction. As expected, the technicality of a song did not significantly predict song popularity."
   }
 ]
