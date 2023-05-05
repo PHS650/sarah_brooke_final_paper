@@ -1,1 +1,72 @@
-Brooke's results go here
+# Brooke's results
+
+## Hypothesis
+
+The first aim of this project hypothesized that both the intensity and involvement factors will predict song popularity such that the higher the factor score, the more likely the the song will have a higher popularity score (over and above the effects of the other factor scores). The third factor, technicality, will not significantly predict song popularity. 
+
+```{r, include = F, warning = F}
+# loading packages
+library(tidyverse)
+library(psych)
+
+# loading data
+d <- read.csv("/Users/brookesasia/Desktop/UW-Madison/PHS 650/sarah_brooke_final_paper/Homework3_variables.csv")
+
+spotify_songs <- tidytuesdayR::tt_load('2020-01-21')$spotify_songs
+
+# checking variable names
+names(d)
+names(spotify_songs)
+
+# keeping track_popularity and track_id to merge into d
+spotify_songs <- spotify_songs %>%
+  select(track_id, track_popularity)
+
+# merging d and spotify_songs
+d <- d %>%
+  full_join(spotify_songs, by = "track_id")
+
+names(d)
+```
+
+## Linear model
+
+```{r, message = F}
+# linear model regressing track popularity on the three factor scores
+m_pop <- lm(track_popularity ~ pa1_intensity + pa2_involvement + pa3_technicality, data = d)
+```
+
+## Results
+
+```{r, include = F}
+m_pop_results <- summary(m_pop)
+
+m_pop_results
+```
+
+```{r, include = F}
+# creating table with model summary results
+table1 <- lm(track_popularity ~ pa1_intensity + pa2_involvement + pa3_technicality, data = d) %>%
+  broom::tidy() %>%
+    mutate(
+    p.value = scales::pvalue(p.value),
+    term = c("Intercept", "Intensity", "Involvement", "Technicality"))
+
+# rounding table values to only have 2 digits
+table1$estimate <- round(table1$estimate, digits = 2)
+table1$std.error <- round(table1$std.error, digits = 2)
+table1$statistic <- round(table1$statistic, digits = 2)
+
+table1
+```
+
+```{r, message=FALSE}
+#| echo: false
+#| label: tbl-1
+#| tbl-cap: "Results from linear model regressing song popularity on factor scores"
+knitr::kable(table1[,c(1,2,3,4,5)],
+             caption = "Model results",
+             col.names = c("Predictor", "b", "SE", "t", "p"))
+```
+
+See @tbl-1 for a summary of the results, which indicated that the intensity of a song predicted popularity in a negative direction, while involvement predicted song popularity in a positive direction. As expected, the technicality of a song did not significantly predict song popularity.
