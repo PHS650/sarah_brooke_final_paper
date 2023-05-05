@@ -2,7 +2,7 @@
 
 ## Hypothesis
 
-The first aim of this project hypothesized that both the intensity and involvement factors will predict song popularity such that the higher the factor score, the more likely the the song will have a higher popularity score (over and above the effects of the other factor scores). The third factor, technicality, will not significantly predict song popularity. 
+The first aim of this project hypothesized that both the intensity and involvement factors will predict song popularity such that the higher the factor score, the more likely the the song will have a higher popularity score (over and above the effects of the other factor scores). The third factor, technicality, will not significantly predict song popularity.
 
 ```{r, include = F, warning = F}
 # loading packages
