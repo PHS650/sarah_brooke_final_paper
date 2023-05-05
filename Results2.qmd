@@ -1,4 +1,4 @@
-# Results 2
+# Sarah's Results
 
 ```{r, echo=FALSE, message=FALSE}
 library(dplyr)
@@ -64,9 +64,6 @@ The results of the first model (@tbl-tab3) indicates that a longer track length 
 
 The results of Models 3 and 4 (@tbl-tab5 and @tbl-tab6) show us that track length do not determine the combined liveness and acoustiness of a track. The results for both models were not significant.
 
-
-
-
 ```{r, echo=FALSE, message=FALSE}
 table1 <- glm(song ~  length, data = data, family = "binomial") %>%
   tidy() %>%
@@ -75,7 +72,7 @@ table1 <- glm(song ~  length, data = data, family = "binomial") %>%
     term = c("Intercept", "Song Length")
   ) 
 table1$or <- exp(table1$estimate)
-``` 
+```
 
 ```{r, echo=FALSE}
 #| echo: false
@@ -122,6 +119,7 @@ table3$or <- exp(table3$estimate)
 table3$or <- round(table3$or, digits = 2)
 table3$or <- format(table3$or, scientific = FALSE)
 ```
+
 ```{r}
 #| echo: false
 #| label: tbl-tab5
@@ -143,6 +141,7 @@ table4$or <- exp(table4$estimate)
 table4$or <- round(table4$or, digits = 2)
 table4$or <- format(table4$or, scientific = FALSE)
 ```
+
 ```{r}
 #| echo: false
 #| label: tbl-tab6
@@ -152,4 +151,3 @@ table4$or <- format(table4$or, scientific = FALSE)
     col.names = c("Predictor", "OR", "SE", "t", "p")
   )
 ```
-
