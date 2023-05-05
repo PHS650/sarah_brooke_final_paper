@@ -1,1 +1,155 @@
-Sarah's results go here
+# Results 2
+
+```{r, echo=FALSE, message=FALSE}
+library(dplyr)
+library(tidyverse)
+library(knitr)
+library(tidyr)
+library(broom)
+library(stargazer)
+```
+
+```{r, echo=FALSE, message=FALSE}
+# Get the Data
+spotify_songs <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2020/2020-01-21/spotify_songs.csv')
+
+spotify_songs$X <- seq(1, nrow(spotify_songs))
+```
+
+```{r, echo=FALSE, message=FALSE}
+# create first new variable
+# add information about the range, type or other information about the variable. 
+
+# variable to note the length of each song in minutes
+spotify_songs$length <- (spotify_songs$duration_ms*.001)/60
+
+# Second new variable
+# song or not?
+spotify_songs$song <- spotify_songs$speechiness
+
+spotify_songs$song <- (ifelse(spotify_songs$song > 0.66, 0, 1))
+
+# Third new variable
+#live and acoustic
+spotify_songs$liv_acoust <- (if_else(spotify_songs$liveness > .8 & spotify_songs$acousticness == 1, 1, 0))
+
+# make genre a factor variable
+spotify_songs$playlist_genre <- as.factor(spotify_songs$playlist_genre)
+```
+
+```{r, echo=FALSE, message=FALSE}
+# read in the data
+data1 <- read.csv("Homework3_variables.csv")
+# read in Sarah's vars
+data2 <- read.csv("Sarah_vars.csv")
+# merge the data
+data <- merge(data1, data2, by=c("track_id", "X"))
+```
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+logit1 <- glm(song ~  length, data = spotify_songs, family = "binomial")
+logit1.2 <- summary(logit1)$coefficients[2, 1]
+
+logit2 <- glm(song ~  length + playlist_genre + tempo + loudness, data = spotify_songs, family = "binomial")
+logit2.2 <- summary(logit2)$coefficients[2, 1]
+
+logit3 <- glm(liv_acoust ~  length, data = data, family = "binomial")
+
+logit4 <- glm(liv_acoust ~ length + playlist_genre + tempo + loudness, data = spotify_songs, family = "binomial")
+```
+
+Results of the analysis are shown below. @tbl-tab3 shows the results of the logistic regressions estimating the likelihood of a track being a song. @tbl-tab4 shows the results of the same estimate but with the added covariates genre (as a factor variable), tempo, and loudness.
+
+The results of the first model (@tbl-tab3) indicates that a longer track length is associated with a `r round(exp(logit1.2), digits = 2)` times higher likelihood of being a song. When we add in the other covariates (Model 2, @tbl-tab4), the likelihood of a track being a song is `r round(exp(logit2.2), digits = 2)` times higher when a track is 1 minute longer.
+
+The results of Models 3 and 4 (@tbl-tab5 and @tbl-tab6) show us that track length do not determine the combined liveness and acoustiness of a track. The results for both models were not significant.
+
+
+
+
+```{r, echo=FALSE, message=FALSE}
+table1 <- glm(song ~  length, data = data, family = "binomial") %>%
+  tidy() %>%
+    mutate(
+    p.value = scales::pvalue(p.value),
+    term = c("Intercept", "Song Length")
+  ) 
+table1$or <- exp(table1$estimate)
+``` 
+
+```{r, echo=FALSE}
+#| echo: false
+#| label: tbl-tab3
+#| tbl-cap: "Results of logistic regression for the likelihood of a track being a song"
+
+kable(table1[,c(1,6,3,4,5)], 
+      caption="\\#{tbl-tab1} Table 1: Model 1",
+      col.names = c("Predictor", "OR", "SE", "t", "p")
+  )
+```
+
+```{r, echo=FALSE}
+table2 <- glm(song ~  length + playlist_genre + tempo + loudness, data = spotify_songs, family = "binomial") %>%
+  tidy() %>%
+    mutate(
+    p.value = scales::pvalue(p.value),
+    term = c("Intercept", "Song Length", "Latin", "Pop", "R&B", "Rap", "Rock", "Tempo", "Loudness")
+  ) 
+table2$or <- exp(table2$estimate)
+table2$or <- round(table2$or, digits = 2)
+table2$or <- format(table2$or, scientific = FALSE)
+```
+
+```{r, message=FALSE}
+#| echo: false
+#| label: tbl-tab4
+#| tbl-cap: "Results of logistic regression for the likelihood of a track being a song"
+  kable(table2[,c(1,6,3,4,5)],
+    caption = "Model 2",
+    col.names = c("Predictor", "OR", "SE", "t", "p")
+  )
+```
+
+```{r, echo=FALSE, warning=FALSE}
+
+table3 <- glm(liv_acoust ~  length, data = spotify_songs, family = "binomial") %>%
+  tidy() %>%
+    mutate(
+    p.value = scales::pvalue(p.value),
+    term = c("Intercept", "Song Length")
+  ) 
+table3$or <- exp(table3$estimate)
+table3$or <- round(table3$or, digits = 2)
+table3$or <- format(table3$or, scientific = FALSE)
+```
+```{r}
+#| echo: false
+#| label: tbl-tab5
+#| tbl-cap: "Results of logistic regression for the likelihood of a track being both live and acoustic"
+  kable(table3[,c(1,6,3,4,5)],
+    caption = "Model 4",
+    col.names = c("Predictor", "OR", "SE", "t", "p")
+  )
+```
+
+```{r, echo=FALSE, warning=FALSE}
+table4 <- glm(liv_acoust ~  length + playlist_genre + tempo + loudness, data = spotify_songs, family = "binomial") %>%
+  tidy() %>%
+    mutate(
+    p.value = scales::pvalue(p.value),
+    term = c("Intercept", "Song Length", "Latin", "Pop", "R&B", "Rap", "Rock", "Tempo", "Loudness")
+  ) 
+table4$or <- exp(table4$estimate)
+table4$or <- round(table4$or, digits = 2)
+table4$or <- format(table4$or, scientific = FALSE)
+```
+```{r}
+#| echo: false
+#| label: tbl-tab6
+#| tbl-cap: "Results of logistic regression for the likelihood of a track being a song"
+  kable(table4[,c(1,6,3,4,5)],
+    caption = "Model 4",
+    col.names = c("Predictor", "OR", "SE", "t", "p")
+  )
+```
+

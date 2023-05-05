@@ -158,6 +158,7 @@
     "href": "references.html",
     "title": "References",
     "section": "",
+
     "text": "Tabachnick, Barbara G., Linda S. Fidell, and Jodie B. Ullman. 2019.\nUsing Multivariate Statistics. Seventh edition. NY,\nNY: Pearson."
   },
   {
@@ -173,17 +174,41 @@
     "title": "2  Methods",
     "section": "",
     "text": "3 Brooke’s Spotify data variable creation"
+
+    "text": "Peng, Chao-Ying Joanne, Kuk Lida Lee, and Gary M. Ingersoll. 2002.\n“An Introduction to Logistic Regression\nAnalysis and Reporting.” The Journal of\nEducational Research 96 (1): 3–14. https://doi.org/10.1080/00220670209598786."
+  },
+  {
+    "objectID": "Methods.html#data",
+    "href": "Methods.html#data",
+    "title": "2  Data and Methods",
+    "section": "2.1 Data",
+    "text": "2.1 Data\n\n\n\nThis study uses Spotify data provided by the TidyTuesday package. The dataset contains 28356 tracks with 10693 different artists. A sample of the data is shown in Table 2.1\nWe created a new set of variables for our analysis. They are shown in Table 2.2 below.\n\n\n\n\nTable 2.1: Sample of data downloaded from TidyTuesday\n\n\n\n\n\n\n\n\n\ntrack_id\ntrack_name\ntrack_artist\ntrack_popularity\ntrack_album_id\n\n\n\n\n6f807x0ima9a1j3VPbc7VN\nI Don’t Care (with Justin Bieber) - Loud Luxury Remix\nEd Sheeran\n66\n2oCs0DGTsRO98Gh5ZSl2Cx\n\n\n0r7CVbZTWZgbTCYdfa2P31\nMemories - Dillon Francis Remix\nMaroon 5\n67\n63rPSO264uRjW1X5E6cWv6\n\n\n1z1Hg7Vb0AhHDiEmnDE79l\nAll the Time - Don Diablo Remix\nZara Larsson\n70\n1HoSmj2eLcsrR0vE9gThr4\n\n\n75FpbthrwQmzHlBJLuGdC7\nCall You Mine - Keanu Silva Remix\nThe Chainsmokers\n60\n1nqYsOef1yKKuGOVchbsk6\n\n\n1e8PAfcKUYoKkxPhrHqw4x\nSomeone You Loved - Future Humans Remix\nLewis Capaldi\n69\n7m7vv9wlQ4i0LFuJiE2zsQ\n\n\n\n\n\n\n\n\n\nWe created a new set of variables for our analysis. They are shown in Table 2.2 below.\n\n\n\n\nTable 2.2: Spotify New Variables\n\n\n\n\n\n\n\n\n\n\n\n\ntrack_id\nX\npa1_intensity\npa2_involvement\npa3_technicality\nlength\nsong\nliv_acoust\n\n\n\n\n0017A6SJgTbfQVU2EtsPNo\n12645\n-1.7196419\n0.1913509\n0.7397046\n3.924000\n1\n0\n\n\n002xjHwzEx66OWFV2IP9dk\n25676\n-0.0755509\n-0.3612856\n0.6282051\n3.288100\n1\n0\n\n\n004s3t0ONYlzxII9PLgU6z\n15062\n0.9121051\n-2.0487493\n0.5053585\n6.225200\n1\n0\n\n\n008MceT31RotUANsKuzy3L\n2888\n0.3357485\n0.1420924\n-0.8679181\n3.809417\n1\n0\n\n\n008rk8F6ZxspZT4bUlkIQG\n1030\n0.9282875\n0.0151897\n0.7652391\n3.938467\n1\n0\n\n\n00bc7A2CLjp40XNd6ZPZNa\n412\n0.1412908\n0.7920615\n-0.9418670\n3.525783\n1\n0\n\n\n00chLpzhgVjxs1zKC9UScL\n24684\n-0.2612712\n1.1648632\n-0.8663965\n4.374450\n1\n0\n\n\n00cqd6ZsSkLZqGMlQCR0Zo\n25779\n-1.9703045\n-1.2217106\n-0.5642814\n4.051117\n1\n0\n\n\n00cWy7HXgoJlXWR718s70W\n27439\n0.0705819\n0.9180228\n0.4760189\n3.936000\n1\n0\n\n\n00e5UrNnUkBSKOPRUew6bG\n7117\n-0.5180877\n0.1889350\n0.4686174\n4.534450\n1\n0"
+  },
+  {
+    "objectID": "Intro.html",
+    "href": "Intro.html",
+    "title": "1  Introduction",
+    "section": "",
+    "text": "We seek to explore various aspects of song data taken from Spotify. The data is available through TidyTuesday, found here.\nThe TidyTuesday project aims to help those learning R use the software in real-world applications. We use the available data to answer two major questions. We seek to find predictors of song popularity as well as those for track type (song or otherwise) and whether a track is both live and acoustic."
+
   },
   {
     "objectID": "Results1.html",
     "href": "Results1.html",
+
     "title": "3  Results",
     "section": "",
     "text": "4 Brooke’s results"
+
+    "title": "Final Paper",
+    "section": "",
+    "text": "Brooke’s results go here"
+
   },
   {
     "objectID": "Results2.html",
     "href": "Results2.html",
+
     "title": "Final Paper",
     "section": "",
     "text": "Sarah’s results go here"
@@ -292,5 +317,24 @@
     "title": "3  Results",
     "section": "4.3 Results",
     "text": "4.3 Results\n\n\n\n\nTable 4.1: Results from linear model regressing song popularity on factor scores\n\n\nPredictor\nb\nSE\nt\np\n\n\n\n\nIntercept\n49.82\n0.12\n403.14\n<0.001\n\n\nIntensity\n-3.59\n0.12\n-29.05\n<0.001\n\n\nInvolvement\n3.64\n0.15\n24.97\n<0.001\n\n\nTechnicality\n0.06\n0.19\n0.30\n0.766\n\n\n\n\n\n\nSee Table 4.1 for a summary of the results, which indicated that the intensity of a song predicted popularity in a negative direction, while involvement predicted song popularity in a positive direction. As expected, the technicality of a song did not significantly predict song popularity."
+
+    "title": "4  Results 2",
+    "section": "",
+    "text": "Results of the analysis are shown below. Table 4.1 shows the results of the logistic regressions estimating the likelihood of a track being a song. Table 4.2 shows the results of the same estimate but with the added covariates genre (as a factor variable), tempo, and loudness.\nThe results of the first model (Table 4.1) indicates that a longer track length is associated with a 2.69 times higher likelihood of being a song. When we add in the other covariates (Model 2, Table 4.2), the likelihood of a track being a song is 1.67 times higher when a track is 1 minute longer.\nThe results of Models 3 and 4 (Table 4.3 and Table 4.4) show us that track length do not determine the combined liveness and acoustiness of a track. The results for both models were not significant.\n\n\n\n\n\n\n\nTable 4.1: Results of logistic regression for the likelihood of a track being a song\n\n\nPredictor\nOR\nSE\nt\np\n\n\n\n\nIntercept\n44.255498\n0.7869710\n4.815908\n<0.001\n\n\nSong Length\n2.693615\n0.2493854\n3.973303\n<0.001\n\n\n\n\n\n\n\n\n\n\n\n\n\nTable 4.2: Results of logistic regression for the likelihood of a track being a song\n\n\nPredictor\nOR\nSE\nt\np\n\n\n\n\nIntercept\n76705195078.61\n999.5598439\n0.0250743\n0.980\n\n\nSong Length\n1.67\n0.2233860\n2.2967791\n0.022\n\n\nLatin\n0.00\n999.5596611\n-0.0147834\n0.988\n\n\nPop\n0.00\n999.5596497\n-0.0148244\n0.988\n\n\nR&B\n0.00\n999.5593306\n-0.0159071\n0.987\n\n\nRap\n0.00\n999.5591802\n-0.0175024\n0.986\n\n\nRock\n1.17\n1473.9345720\n0.0001089\n>0.999\n\n\nTempo\n0.98\n0.0060161\n-3.3743024\n<0.001\n\n\nLoudness\n1.13\n0.0454044\n2.7732540\n0.006\n\n\n\n\n\n\n\n\n\n\n\n\n\nTable 4.3: Results of logistic regression for the likelihood of a track being both live and acoustic\n\n\nPredictor\nOR\nSE\nt\np\n\n\n\n\nIntercept\n0\n7672.975\n-0.0034623\n0.997\n\n\nSong Length\n1\n1970.860\n0.0000000\n>0.999\n\n\n\n\n\n\n\n\n\n\n\n\n\nTable 4.4: Results of logistic regression for the likelihood of a track being a song\n\n\nPredictor\nOR\nSE\nt\np\n\n\n\n\nIntercept\n0\n13342.03004\n-0.0019912\n0.998\n\n\nSong Length\n1\n2020.67775\n0.0000000\n>0.999\n\n\nLatin\n1\n6797.83425\n0.0000000\n>0.999\n\n\nPop\n1\n6673.65838\n0.0000000\n>0.999\n\n\nR&B\n1\n6913.60360\n0.0000000\n>0.999\n\n\nRap\n1\n6671.68279\n0.0000000\n>0.999\n\n\nRock\n1\n7026.27785\n0.0000000\n>0.999\n\n\nTempo\n1\n74.04276\n0.0000000\n>0.999\n\n\nLoudness\n1\n690.17222\n0.0000000\n>0.999"
+  },
+  {
+    "objectID": "Discussion.html",
+    "href": "Discussion.html",
+    "title": "5  Discussion",
+    "section": "",
+    "text": "[Brooke]\nThe results of the second analysis differed from the hypothesis. While song length was predictive of track type, the relationship was in the opposite direction from expected. We expected to find that longer tracks were less likely to be songs, as we expected that these would more likely be podcast epidosdes. Instead, longer tracks were more likely to be songs. These results could indicate that there are shorter tracks in the Spotify data which are not songs. It is unclear what kind of tracks these would be. Further analysis should investigate the characteristics of short and long tracks."
+  },
+  {
+    "objectID": "Methods.html#methods",
+    "href": "Methods.html#methods",
+    "title": "2  Data and Methods",
+    "section": "2.2 Methods",
+    "text": "2.2 Methods\n[Brooke]\nThe second portion of our analysis comprises nested logistic regressions. The first model estimates the likelihood that a track is a song with track length as the predictor. The second model estimates the likelihood that a track is both live and acoustic with the same main predictor. Models 3 and 4 mirror models 1 and 2 but include the covariates tempo, loundess, and genre. Results are presented in odds ratios (Peng, Lee, and Ingersoll 2002).\n\n\n\n\nPeng, Chao-Ying Joanne, Kuk Lida Lee, and Gary M. Ingersoll. 2002. “An Introduction to Logistic Regression Analysis and Reporting.” The Journal of Educational Research 96 (1): 3–14. https://doi.org/10.1080/00220670209598786."
+
   }
 ]

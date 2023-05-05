@@ -220,3 +220,50 @@ new_vars <- d %>%
 # exporting the dataset
 write.csv(new_vars, "Homework3_variables.csv")
 ```
+
+# Sarah's Spotify data variable creation
+
+## Data
+
+```{r, echo=FALSE, message=FALSE}
+library(knitr)
+
+spotify_songs <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2020/2020-01-21/spotify_songs.csv')
+
+artists <- length(unique(spotify_songs$track_artist))
+
+songs <- length(unique(spotify_songs$track_id))
+
+```
+
+This study uses Spotify data provided by the TidyTuesday package. The dataset contains `r songs` tracks with `r artists` different artists. A sample of the data is shown in @tbl-tab1
+
+We created a new set of variables for our analysis. They are shown in @tbl-tab2 below.
+
+```{r, echo=FALSE, message=TRUE}
+#| echo: false
+#| label: tbl-tab1
+#| tbl-cap: "Sample of data downloaded from TidyTuesday"
+kable(spotify_songs[1:5,1:5], caption="\\#{tbl-tab1} Table 1: Spotify Data Example")
+```
+
+```{r, echo=FALSE, message=FALSE}
+# read in the data
+data1 <- read.csv("Homework3_variables.csv")
+# read in Sarah's vars
+data2 <- read.csv("Sarah_vars.csv")
+# merge the data
+data <- merge(data1, data2, by=c("track_id", "X"))
+```
+
+We created a new set of variables for our analysis. They are shown in @tbl-tab2 below.
+
+```{r}
+#| echo: false
+#| label: tbl-tab2
+#| tbl-cap: "Spotify New Variables"
+kable(data[1:10,1:8], caption="\\#{tbl-tab2} Table 1: Spotify New Variables")
+```
+
+The second portion of our analysis comprises nested logistic regressions. The first model estimates the likelihood that a track is a song with track length as the predictor. The second model estimates the likelihood that a track is both live and acoustic with the same main predictor. Models 3 and 4 mirror models 1 and 2 but include the covariates tempo, loundess, and genre. Results are presented in odds ratios [@pengIntroductionLogisticRegression2002].
+

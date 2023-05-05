@@ -13,3 +13,9 @@ It is hypothesized that both the intensity and involvement factors will predict 
 **Augemented model:** song_popularity = b~0~ + b~1_intensity~ + b~2_involvement~ + b~3_technicality~ (all predictors are continuous)
 
 More details regarding the specifics of the dataset, including how it was collected and compiled, can be obtained from TidyTuesday at the following link: [Tidy Tuesday](https://github.com/rfordatascience/tidytuesday/blob/master/data/2020/2020-01-21/readme.md)
+
+## Sarah
+
+We seek to explore various aspects of song data taken from Spotify. The data is available through TidyTuesday, found [here](https://github.com/rfordatascience/tidytuesday/blob/master/data/2020/2020-01-21/readme.md).
+
+The TidyTuesday project aims to help those learning R use the software in real-world applications. We use the available data to answer two major questions. We seek to find predictors of song popularity as well as those for track type (song or otherwise) and whether a track is both live and acoustic.
